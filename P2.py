@@ -35,39 +35,61 @@ def divide_into_entries(lines):
 
 
 class GenBankEntry(object):
-    def __init__(self):
+    def __init__(self, gb_entry):
         self.access_n = None
         self.organism = None
         self.sequence = ""
+        self.__parse_entry(gb_entry)
 
-    def parse_entry(self, gb_entry):
+    def __parse_entry(self, gb_entry):
         """
         Parse one entry in GenBank format
 
         Only reading accession no, organism and sequence
         """
-        for field in range(len(gb_entry)):
-            if re.search(r"^ACCESSION", gb_entry[field]):
-                self.access_n = gb_entry[field].split("   ")[1]
-            if re.search(r"^  ORGANISM", gb_entry[field]):
-                self.organism = gb_entry[field].split("  ")[1]
-            if re.search(r"^ORIGIN", gb_entry[field]):
-                for line in gb_entry[field+1:]:
-                    self.sequence.join([c for c in line if c not in "1234567890 "])
+        for i in range(len(gb_entry)):
+            if re.match(r"ACCESSION", gb_entry[i]):
+                self.access_n = gb_entry[i].split("   ")[1]
+            if re.match(r" {2}ORGANISM", gb_entry[i]):
+                self.organism = gb_entry[i].split("  ")[1]
+            if re.match(r"ORIGIN", gb_entry[i]):
+                for line in gb_entry[i+1:]:
+                    for base in line:
+                        if base.upper() in "ACTG":
+                            self.sequence += base.upper()
 
+    def __calc_gc_content(self):
+        """
+        Function for calculating percentage of GC in a DNA sequence (type str)
+        Not taken into account the occurrences of U, N, Y, K or other FASTA acid codes, or gaps.
+        """
+        n_gc = self.sequence.count("G") + self.sequence.count("C")
+        percentage_gc = n_gc / len(self.sequence)
+        if (percentage_gc - n_gc / len(self.sequence)) < 0.001:
+            return 100 * percentage_gc
 
+    ###  Get functions
+    def get_access_no(self):
+        return self.access_n
 
+    def get_organism(self):
+        return self.organism
 
+    def get_seq(self):
+        return self.sequence
 
-
-
+    def get_gc_content(self):
+        return self.__calc_gc_content()
 
 
 if __name__ == '__main__':
     if len(argv) > 1:
         with open(argv[1]) as file:
+            # gb_obj_map = []
+            entries = []
             for entry in divide_into_entries(file):
-                pass
+                entries += [entry]
+            gb_obj_list = [GenBankEntry(e) for e in entries]
 
 
 
