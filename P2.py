@@ -40,6 +40,7 @@ class GenBankEntry(object):
         self.organism = None
         self.sequence = ""
         self.__parse_entry(gb_entry)
+        self.gc_content = self.__calc_gc_content()
 
     def __parse_entry(self, gb_entry):
         """
@@ -50,7 +51,7 @@ class GenBankEntry(object):
         for i in range(len(gb_entry)):
             if re.match(r"ACCESSION", gb_entry[i]):
                 self.access_n = gb_entry[i].split("   ")[1]
-            if re.match(r" {2}ORGANISM", gb_entry[i]):
+            if re.search(r"ORGANISM", gb_entry[i]):
                 self.organism = gb_entry[i].split("  ")[1]
             if re.match(r"ORIGIN", gb_entry[i]):
                 for line in gb_entry[i+1:]:
@@ -68,28 +69,36 @@ class GenBankEntry(object):
         if (percentage_gc - n_gc / len(self.sequence)) < 0.001:
             return 100 * percentage_gc
 
-    ###  Get functions
-    def get_access_no(self):
-        return self.access_n
+    def output_fasta_string(self):
+        assert self.access_n is not None and self.sequence != ""
+        return ">{0:s}\n{1}\n".format(self.access_n, self.sequence)
 
-    def get_organism(self):
-        return self.organism
+    def output_tab_delim(self):
+        assert [e for e in [self.access_n, self.organism, self.gc_content, self.sequence]] is not None
+        return "{0:15s}\t{1:30s}\t{2:.2f}%\t{3:5d}\n".format(self.access_n, self.organism, self.gc_content, len(self.sequence))
 
-    def get_seq(self):
-        return self.sequence
-
+    #  Get functions
     def get_gc_content(self):
-        return self.__calc_gc_content()
+        if self.gc_content is None:
+            self.gc_content = self.__calc_gc_content()
+        return self.gc_content
 
 
 if __name__ == '__main__':
     if len(argv) > 1:
+        filename_no_ext = re.search(r'.+\.', argv[1])
         with open(argv[1]) as file:
             # gb_obj_map = []
             entries = []
             for entry in divide_into_entries(file):
                 entries += [entry]
             gb_obj_list = [GenBankEntry(e) for e in entries]
+            gb_obj_sorted = sorted(gb_obj_list, key=lambda gb_obj: gb_obj.gc_content, reverse=True)
 
+            with open(filename_no_ext.group() + "fasta", 'w') as fasta_dest:
+                for entry in gb_obj_sorted:
+                    fasta_dest.write(entry.output_fasta_string())
 
-
+            with open(filename_no_ext.group() + "txt", 'w') as text_dest:
+                for entry in gb_obj_sorted:
+                    text_dest.write(entry.output_tab_delim())
