@@ -194,6 +194,5 @@ if __name__ == '__main__':
 
             else:
                 print("No reference genome given. For help run with -h option\n")
-
         else:
             print("No predicted .gff file given. For help run with -h option\n")
