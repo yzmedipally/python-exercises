@@ -15,7 +15,7 @@ def print_help():
 
     :return: None. is a print function.
     """
-    help_str = None
+    help_str = "THIS IS THE HELP FUNCTION (WIP)"
 
     print("{}".format(help_str))
 
