@@ -1,0 +1,859 @@
+# BLASTP 2.2.31+
+# Query: g86
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g86	YCR033W	100.00	1226	0	0	1	1226	1	1226	0.0	2520
+# BLASTP 2.2.31+
+# Query: g102
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g102	YCR052W	100.00	483	0	0	1	483	1	483	0.0	988
+# BLASTP 2.2.31+
+# Query: g52
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g52	YCL009C	100.00	309	0	0	1	309	1	309	0.0	636
+# BLASTP 2.2.31+
+# Query: g127
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g127	YCR087C-A	100.00	153	0	0	1	153	1	153	2e-109	310
+# BLASTP 2.2.31+
+# Query: g121
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g121	YCR079W	100.00	392	0	0	1	392	51	442	0.0	816
+# BLASTP 2.2.31+
+# Query: g142
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g142	YCR105W	100.00	361	0	0	1	361	1	361	0.0	739
+# BLASTP 2.2.31+
+# Query: g136
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g136	YCR097W	99.18	122	1	0	1	122	1	122	6e-86	249
+# BLASTP 2.2.31+
+# Query: g77
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g77	YCR023C	100.00	611	0	0	1	611	1	611	0.0	1269
+# BLASTP 2.2.31+
+# Query: g3
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g3	YCL073C	100.00	615	0	0	1	615	1	615	0.0	1265
+# BLASTP 2.2.31+
+# Query: g103
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g103	YCR053W	100.00	514	0	0	1	514	1	514	0.0	1056
+# BLASTP 2.2.31+
+# Query: g44
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g44	YCL019W	98.31	1770	1	1	1	1741	1	1770	0.0	3597
+# BLASTP 2.2.31+
+# Query: g141
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g141	YCR104W	100.00	124	0	0	1	124	1	124	3e-86	249
+# BLASTP 2.2.31+
+# Query: g139
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g139	YCR100C	100.00	316	0	0	230	545	1	316	0.0	649
+# BLASTP 2.2.31+
+# Query: g69
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g69	YCR015C	100.00	317	0	0	1	317	1	317	0.0	653
+# BLASTP 2.2.31+
+# Query: g90
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g90	YCR037C	100.00	923	0	0	1	923	1	923	0.0	1894
+# BLASTP 2.2.31+
+# Query: g57
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g57	YCL001W-A	99.31	144	1	0	1	144	1	144	3e-100	291
+# BLASTP 2.2.31+
+# Query: g42
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g42	YCL025C	100.00	633	0	0	1	633	1	633	0.0	1308
+# BLASTP 2.2.31+
+# Query: g60
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g60	YCR004C	100.00	247	0	0	1	247	1	247	0.0	503
+# BLASTP 2.2.31+
+# Query: g53
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g53	YCL008C	100.00	385	0	0	1	385	1	385	0.0	789
+# BLASTP 2.2.31+
+# Query: g21
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g21	YCL048W	100.00	463	0	0	1	463	1	463	0.0	937
+# BLASTP 2.2.31+
+# Query: g111
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g111	YCR067C	100.00	1065	0	0	1	1065	1	1065	0.0	2112
+# BLASTP 2.2.31+
+# Query: g80
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g80	YCR027C	100.00	209	0	0	1	209	1	209	2e-155	431
+# BLASTP 2.2.31+
+# Query: g117
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g117	YCR073W-A	100.00	315	0	0	1	315	1	315	0.0	650
+# BLASTP 2.2.31+
+# Query: g72
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g72	YCR018C	100.00	221	0	0	1	221	1	221	6e-163	451
+# BLASTP 2.2.31+
+# Query: g58
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g58	YCR002C	100.00	322	0	0	1	322	1	322	0.0	662
+# BLASTP 2.2.31+
+# Query: g101
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g101	YCR051W	100.00	222	0	0	1	222	1	222	2e-164	455
+# BLASTP 2.2.31+
+# Query: g20
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g20	YCL048W-A	100.00	79	0	0	1	79	1	79	4e-47	146
+# BLASTP 2.2.31+
+# Query: g55
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g55	YCL004W	100.00	492	0	0	1	492	30	521	0.0	1014
+# BLASTP 2.2.31+
+# Query: g59
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g59	YCR003W	100.00	183	0	0	1	183	1	183	7e-136	380
+# BLASTP 2.2.31+
+# Query: g31
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g31	YCL035C	100.00	110	0	0	1	110	1	110	1e-77	226
+# BLASTP 2.2.31+
+# Query: g18
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g18	YCL050C	100.00	321	0	0	1	321	1	321	0.0	664
+# BLASTP 2.2.31+
+# Query: g75
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g75	YCR020C-A	100.00	88	0	0	1	88	1	88	3e-57	172
+# BLASTP 2.2.31+
+# Query: g71
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g71	YCR017C	100.00	953	0	0	1	953	1	953	0.0	1963
+# BLASTP 2.2.31+
+# Query: g1
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g1	YCL076W	100.00	247	0	0	1	247	1	247	0.0	513
+# BLASTP 2.2.31+
+# Query: g15
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g15	YCL054W	100.00	841	0	0	1	841	1	841	0.0	1723
+# BLASTP 2.2.31+
+# Query: g81
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g81	YCR028C	100.00	511	0	0	1	511	2	512	0.0	1059
+# BLASTP 2.2.31+
+# Query: g61
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g61	YCR005C	100.00	460	0	0	1	460	1	460	0.0	944
+# BLASTP 2.2.31+
+# Query: g13
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g13	YCL057W	100.00	686	0	0	1	686	27	712	0.0	1416
+# BLASTP 2.2.31+
+# Query: g107
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g107	YCR060W	100.00	111	0	0	1	111	1	111	6e-79	229
+# BLASTP 2.2.31+
+# Query: g137
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g137	YCR098C	100.00	518	0	0	1	518	1	518	0.0	1060
+# BLASTP 2.2.31+
+# Query: g84
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g84	YCR031C	100.00	137	0	0	1	137	1	137	3e-96	275
+# BLASTP 2.2.31+
+# Query: g130
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g130	YCR090C	100.00	182	0	0	1	182	1	182	4e-133	372
+# BLASTP 2.2.31+
+# Query: g24
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g24	YCL044C	100.00	417	0	0	1	417	1	417	0.0	853
+# BLASTP 2.2.31+
+# Query: g105
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g105	YCR057C	100.00	923	0	0	1	923	1	923	0.0	1906
+# BLASTP 2.2.31+
+# Query: g11
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g11	YCL058W-A	100.00	113	0	0	1	113	1	113	4e-75	220
+# BLASTP 2.2.31+
+# Query: g97
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g97	YCR045C	100.00	491	0	0	1	491	1	491	0.0	1021
+# BLASTP 2.2.31+
+# Query: g41
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g41	YCL026C-A	100.00	193	0	0	1	193	1	193	1e-144	402
+# BLASTP 2.2.31+
+# Query: g16
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g16	YCL052C	100.00	416	0	0	1	416	1	416	0.0	861
+# BLASTP 2.2.31+
+# Query: g78
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g78	YCR024C	100.00	492	0	0	1	492	1	492	0.0	1026
+# BLASTP 2.2.31+
+# Query: g64
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g64	YCR009C	100.00	265	0	0	1	265	1	265	0.0	543
+# BLASTP 2.2.31+
+# Query: g126
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g126	YCR086W	100.00	190	0	0	1	190	1	190	9e-138	385
+# BLASTP 2.2.31+
+# Query: g118
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g118	YCR076C	90.06	171	16	1	68	237	55	225	4e-110	320
+# BLASTP 2.2.31+
+# Query: g122
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g122	YCR081W	100.00	1427	0	0	1	1427	1	1427	0.0	2919
+# BLASTP 2.2.31+
+# Query: g144
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g144	YCR107W	100.00	363	0	0	1	363	1	363	0.0	751
+# BLASTP 2.2.31+
+# Query: g45
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g45	YCL018W	100.00	364	0	0	1	364	1	364	0.0	735
+# BLASTP 2.2.31+
+# Query: g82
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g82	YCR028C-A	100.00	135	0	0	1	135	1	135	8e-99	281
+# BLASTP 2.2.31+
+# Query: g131
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g131	YCR091W	100.00	702	0	0	1	702	19	720	0.0	1459
+# BLASTP 2.2.31+
+# Query: g22
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g22	YCL047C	100.00	258	0	0	1	258	1	258	0.0	534
+# BLASTP 2.2.31+
+# Query: g30
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g30	YCL036W	100.00	561	0	0	1	561	6	566	0.0	1178
+# BLASTP 2.2.31+
+# Query: g51
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g51	YCL010C	100.00	259	0	0	1	259	1	259	0.0	537
+# BLASTP 2.2.31+
+# Query: g104
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g104	YCR054C	100.00	563	0	0	1	563	1	563	0.0	1155
+# BLASTP 2.2.31+
+# Query: g67
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g67	YCR012W	100.00	416	0	0	1	416	1	416	0.0	835
+# BLASTP 2.2.31+
+# Query: g120
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g120	YCR077C	100.00	796	0	0	1	796	1	796	0.0	1629
+# BLASTP 2.2.31+
+# Query: g38
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g38	YCL028W	100.00	405	0	0	1	405	1	405	0.0	748
+# BLASTP 2.2.31+
+# Query: g124
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g124	YCR083W	100.00	127	0	0	1	127	1	127	1e-92	265
+# BLASTP 2.2.31+
+# Query: g56
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g56	YCL001W	100.00	188	0	0	1	188	1	188	9e-140	390
+# BLASTP 2.2.31+
+# Query: g6
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g6	YCR040W	100.00	175	0	0	1	175	1	175	3e-130	365
+# BLASTP 2.2.31+
+# Query: g134
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g134	YCR094W	100.00	391	0	0	1	391	1	391	0.0	815
+# BLASTP 2.2.31+
+# Query: g5
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g5	YCR039C	100.00	210	0	0	1	210	1	210	7e-152	422
+# BLASTP 2.2.31+
+# Query: g74
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g74	YCR020C	100.00	215	0	0	1	215	1	215	1e-160	445
+# BLASTP 2.2.31+
+# Query: g46
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g46	YCL017C	100.00	497	0	0	1	497	1	497	0.0	1035
+# BLASTP 2.2.31+
+# Query: g98
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g98	YCR046C	100.00	169	0	0	1	169	1	169	4e-121	341
+# BLASTP 2.2.31+
+# Query: g143
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g143	YCR106W	100.00	832	0	0	1	832	1	832	0.0	1720
+# BLASTP 2.2.31+
+# Query: g73
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g73	YCR019W	100.00	362	0	0	1	362	2	363	0.0	748
+# BLASTP 2.2.31+
+# Query: g19
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g19	YCL049C	100.00	312	0	0	1	312	1	312	0.0	648
+# BLASTP 2.2.31+
+# Query: g112
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g112	YCR068W	100.00	471	0	0	1	471	50	520	0.0	990
+# BLASTP 2.2.31+
+# Query: g35
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g35	YCL031C	100.00	297	0	0	1	297	1	297	0.0	616
+# BLASTP 2.2.31+
+# Query: g133
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g133	YCR093W	100.00	2108	0	0	1	2108	1	2108	0.0	4305
+# BLASTP 2.2.31+
+# Query: g29
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g29	YCL037C	100.00	434	0	0	33	466	1	434	0.0	891
+# BLASTP 2.2.31+
+# Query: g33
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g33	YCL033C	100.00	168	0	0	1	168	1	168	7e-127	355
+# BLASTP 2.2.31+
+# Query: g83
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g83	YCR030C	100.00	870	0	0	1	870	1	870	0.0	1779
+# BLASTP 2.2.31+
+# Query: g34
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g34	YCL032W	100.00	346	0	0	1	346	1	346	0.0	717
+# BLASTP 2.2.31+
+# Query: g96
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g96	YCR044C	100.00	357	0	0	1	357	1	357	0.0	744
+# BLASTP 2.2.31+
+# Query: g114
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g114	YCR071C	100.00	146	0	0	1	146	1	146	5e-106	301
+# BLASTP 2.2.31+
+# Query: g70
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g70	YCR016W	100.00	290	0	0	1	290	1	290	0.0	573
+# BLASTP 2.2.31+
+# Query: g88
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g88	YCR035C	100.00	394	0	0	1	394	1	394	0.0	805
+# BLASTP 2.2.31+
+# Query: g28
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g28	YCL038C	100.00	528	0	0	1	528	1	528	0.0	1064
+# BLASTP 2.2.31+
+# Query: g115
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g115	YCR072C	100.00	515	0	0	1	515	1	515	0.0	1064
+# BLASTP 2.2.31+
+# Query: g2
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g2	YCL074W	100.00	308	0	0	1	308	1	308	0.0	641
+# BLASTP 2.2.31+
+# Query: g91
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g91	YCR038C	100.00	608	0	0	1	608	35	642	0.0	1251
+# BLASTP 2.2.31+
+# Query: g23
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g23	YCL045C	100.00	760	0	0	1	760	1	760	0.0	1560
+# BLASTP 2.2.31+
+# Query: g48
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g48	YCL014W	100.00	1636	0	0	1	1636	1	1636	0.0	3343
+# BLASTP 2.2.31+
+# Query: g95
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g95	YCR043C	100.00	127	0	0	1	127	1	127	3e-92	264
+# BLASTP 2.2.31+
+# Query: g47
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g47	YCL016C	100.00	380	0	0	1	380	1	380	0.0	786
+# BLASTP 2.2.31+
+# Query: g106
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g106	YCR059C	100.00	258	0	0	1	258	1	258	0.0	536
+# BLASTP 2.2.31+
+# Query: g109
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g109	YCR065W	100.00	563	0	0	1	563	2	564	0.0	1164
+# BLASTP 2.2.31+
+# Query: g76
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g76	YCR021C	100.00	332	0	0	1	332	1	332	0.0	686
+# BLASTP 2.2.31+
+# Query: g36
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g36	YCL030C	100.00	799	0	0	1	799	1	799	0.0	1638
+# BLASTP 2.2.31+
+# Query: g85
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g85	YCR032W	100.00	2167	0	0	1	2167	1	2167	0.0	4439
+# BLASTP 2.2.31+
+# Query: g40
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g40	YCL026C-B	100.00	193	0	0	1	193	1	193	5e-142	396
+# BLASTP 2.2.31+
+# Query: g39
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g39	YCL027W	100.00	507	0	0	1	507	6	512	0.0	1049
+# BLASTP 2.2.31+
+# Query: g43
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g43	YCL024W	100.00	1037	0	0	1	1037	1	1037	0.0	2106
+# BLASTP 2.2.31+
+# Query: g4
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g4	YKR105C	93.64	582	6	1	1	551	1	582	0.0	1086
+# BLASTP 2.2.31+
+# Query: g129
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g129	YCR089W	100.00	1609	0	0	1	1609	1	1609	0.0	3023
+# BLASTP 2.2.31+
+# Query: g100
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g100	YCR048W	100.00	610	0	0	1	610	1	610	0.0	1271
+# BLASTP 2.2.31+
+# Query: g25
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g25	YCL043C	100.00	522	0	0	1	522	1	522	0.0	1069
+# BLASTP 2.2.31+
+# Query: g62
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g62	YCR007C	100.00	239	0	0	1	239	1	239	1e-179	495
+# BLASTP 2.2.31+
+# Query: g92
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g92	YCR039C	100.00	210	0	0	1	210	1	210	7e-152	422
+# BLASTP 2.2.31+
+# Query: g26
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g26	YCL040W	100.00	500	0	0	1	500	1	500	0.0	1036
+# BLASTP 2.2.31+
+# Query: g140
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g140	YCR102C	100.00	368	0	0	1	368	1	368	0.0	752
+# BLASTP 2.2.31+
+# Query: g49
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g49	YCL012C	100.00	113	0	0	1	113	22	134	3e-79	231
+# BLASTP 2.2.31+
+# Query: g54
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g54	YCL005W	100.00	113	0	0	1	113	144	256	1e-80	239
+# BLASTP 2.2.31+
+# Query: g66
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g66	YCR011C	100.00	1049	0	0	1	1049	1	1049	0.0	2144
+# BLASTP 2.2.31+
+# Query: g89
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g89	YCR036W	100.00	333	0	0	1	333	1	333	0.0	688
+# BLASTP 2.2.31+
+# Query: g50
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g50	YCL011C	100.00	421	0	0	1	421	7	427	0.0	862
+# BLASTP 2.2.31+
+# Query: g12
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g12	YCL057C-A	100.00	97	0	0	1	97	1	97	5e-66	195
+# BLASTP 2.2.31+
+# Query: g14
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g14	YCL055W	100.00	335	0	0	1	335	1	335	0.0	701
+# BLASTP 2.2.31+
+# Query: g68
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g68	YCR014C	100.00	582	0	0	1	582	1	582	0.0	1195
+# BLASTP 2.2.31+
+# Query: g17
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g17	YCL051W	100.00	583	0	0	1	583	1	583	0.0	1208
+# BLASTP 2.2.31+
+# Query: g87
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g87	YCR034W	100.00	347	0	0	1	347	1	347	0.0	712
+# BLASTP 2.2.31+
+# Query: g63
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g63	YCR008W	100.00	600	0	0	1	600	4	603	0.0	1258
+# BLASTP 2.2.31+
+# Query: g8
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g8	YCL063W	100.00	423	0	0	1	423	1	423	0.0	866
+# BLASTP 2.2.31+
+# Query: g65
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g65	YCR010C	100.00	283	0	0	1	283	1	283	0.0	576
+# BLASTP 2.2.31+
+# Query: g93
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g93	YCR040W	100.00	175	0	0	1	175	1	175	3e-130	365
+# BLASTP 2.2.31+
+# Query: g125
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g125	YCR084C	100.00	713	0	0	1	713	1	713	0.0	1474
+# BLASTP 2.2.31+
+# Query: g108
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g108	YCR061W	100.00	631	0	0	1	631	1	631	0.0	1302
+# BLASTP 2.2.31+
+# Query: g99
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g99	YCR047C	100.00	275	0	0	1	275	1	275	0.0	570
+# BLASTP 2.2.31+
+# Query: g10
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g10	YCL059C	100.00	316	0	0	1	316	1	316	0.0	650
+# BLASTP 2.2.31+
+# Query: g37
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g37	YCL029C	100.00	440	0	0	1	440	1	440	0.0	917
+# BLASTP 2.2.31+
+# Query: g135
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g135	YCR095C	100.00	362	0	0	1	362	1	362	0.0	744
+# BLASTP 2.2.31+
+# Query: g7
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g7	YCL064C	100.00	360	0	0	1	360	1	360	0.0	744
+# BLASTP 2.2.31+
+# Query: g132
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g132	YCR092C	100.00	1018	0	0	30	1047	1	1018	0.0	2101
+# BLASTP 2.2.31+
+# Query: g32
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g32	YCL034W	100.00	354	0	0	1	354	1	354	0.0	724
+# BLASTP 2.2.31+
+# Query: g138
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g138	YCR099C	100.00	120	0	0	1	120	36	155	5e-84	244
+# BLASTP 2.2.31+
+# Query: g79
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g79	YCR026C	100.00	742	0	0	1	742	1	742	0.0	1526
+# BLASTP 2.2.31+
+# Query: g110
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g110	YCR066W	100.00	487	0	0	1	487	1	487	0.0	1009
+# BLASTP 2.2.31+
+# Query: g9
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g9	YCL061C	100.00	1096	0	0	1	1096	1	1096	0.0	2220
+# BLASTP 2.2.31+
+# Query: g113
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g113	YCR069W	100.00	318	0	0	1	318	1	318	0.0	661
+# BLASTP 2.2.31+
+# Query: g94
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g94	YCR042C	100.00	1406	0	0	1	1406	2	1407	0.0	2909
+# BLASTP 2.2.31+
+# Query: g116
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g116	YCR073C	100.00	1330	0	0	1	1330	2	1331	0.0	2765
+# BLASTP 2.2.31+
+# Query: g128
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g128	YCR088W	100.00	592	0	0	1	592	1	592	0.0	1176
+# BLASTP 2.2.31+
+# Query: g123
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g123	YCR082W	100.00	128	0	0	1	128	1	128	2e-91	262
+# BLASTP 2.2.31+
+# Query: g27
+# Database: yeast_prot_db
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+g27	YCL039W	100.00	745	0	0	1	745	1	745	0.0	1549
+# BLAST processed 143 queries
