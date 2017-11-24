@@ -149,7 +149,7 @@ if __name__ == '__main__':
             predicted_fasta = parse_gff(predicted_gff)
             write_fasta(predicted_fasta)
 
-        if all([reference_fa, predicted_gff] is not None):
+        if all([reference_fa, predicted_gff]) is not None:
             run_blast(reference_fa, predicted_gff)
 
 
