@@ -8,7 +8,8 @@ Author: Hidde Bleeker
 # imports
 from sys import argv
 import re
-
+import os.path
+import subprocess as sbp
 
 def print_help():
     """ Print a usage manual
@@ -124,8 +125,25 @@ def write_fasta(fasta_dic, output_file="predicted"):
             file.write(entry)
 
 
-def run_blast(input_file1, input_file2, output_file="yeast.blast"):
-    pass
+def make_blast_db(input_fasta, output_db_file="blast_prot_db"):
+    if not os.path.exists(output_db_file):
+        blast_db_cmd = "makeblastdb -in {} -input_type fasta -dbtype prot -out {}".format(input_fasta, output_db_file)
+        is_error = sbp.check_call(blast_db_cmd)
+        if is_error:
+            raise Exception("Cannot create the BLAST database")
+        return output_db_file
+    else:
+        return output_db_file
+
+
+def run_blast(query_input, database_input, output_file="yeast.blast"):
+    if not os.path.exists(output_filename):
+        blastp_cmd = "blastp -query {} -task blastp -db {} -outfmt 7 -num_alignments 1 -out {}"\
+        .format(query_input, database_input, output_filename)
+        is_error = sbp.check_call(blastp_cmd)
+        if is_error:
+            raise Exception("Could not run the blastp query")
+    return output_filename
 
 
 if __name__ == '__main__':
@@ -153,7 +171,7 @@ if __name__ == '__main__':
         if all([reference_fa, predicted_gff]) is not None:
             run_blast(reference_fa, predicted_gff)
 
-
+        # make_blast_db(database_input, "blast_protein_db")
 
 
 
