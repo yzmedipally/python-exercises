@@ -146,13 +146,12 @@ if __name__ == '__main__':
             print_help()
 
         if predicted_gff is not None:
-            predicted_fasta = parse_gff(predicted_gff)
+            with open(predicted_gff) as file:
+                predicted_fasta = parse_gff(str(file))
             write_fasta(predicted_fasta)
 
         if all([reference_fa, predicted_gff]) is not None:
             run_blast(reference_fa, predicted_gff)
-
-
 
 
 
