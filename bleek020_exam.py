@@ -113,14 +113,14 @@ def fasta_dic_to_string(fasta_dic):
         yield ">{}\n{}\n".format(key, val)
 
 
-def write_fasta(fasta_dic, output_file="predicted"):
+def write_fasta(fasta_dic, output_file):
     """ Write FASTA strings from generator function to file
 
     :param fasta_dic: Dictionary with {id: sequence}
-    :param output_file: filename of the output fasta file (without .fa extension)
+    :param output_file: filename of the output fasta file (with .fa extension)
     :return: None (because it writes a file).
     """
-    with open(output_file + ".fa", "w") as file:
+    with open(output_file, "w") as file:
         for entry in fasta_dic_to_string(fasta_dic):
             file.write(entry)
 
@@ -138,19 +138,32 @@ def make_blast_db(input_fasta, output_db_file="blast_prot_db"):
 
 def run_blast(query_input, database_input, output_file="yeast.blast"):
     if not os.path.exists(output_filename):
-        blastp_cmd = "blastp -query {} -task blastp -db {} -outfmt 7 -num_alignments 1 -out {}"\
-        .format(query_input, database_input, output_filename)
+        blastp_cmd = "blastp -query {} -task blastp -db {} -outfmt 7 -num_alignments 1 -out {}".format(
+            query_input, database_input, output_filename)
         is_error = sbp.check_call(blastp_cmd)
         if is_error:
             raise Exception("Could not run the blastp query")
     return output_filename
 
 
+def parse_blast_output(lines):
+    query_dic = {}
+    for line in lines:
+        if line.startswith("#"):
+            continue
+        else:
+            fields = line.split("\t")
+            # query dictionary contains: ID as key; (query length,
+            query_length = fields[7] - fields[6]
+            query_dic[fields[0]] = (query_length, fields[1], fields[2], (fields[3] / query_length * 100))
+    return query_dic
+
+
 if __name__ == '__main__':
     if len(argv) == 1:
         print_help()
     else:
-        predicted_gff, reference_fa, output_filename = None, None, None
+        predicted_gff, reference_fa, output_filename = None, None, "yeast.blast"
         try:
             if "-h" in argv or "--help" in argv:
                 print_help()
@@ -164,15 +177,23 @@ if __name__ == '__main__':
             print_help()
 
         if predicted_gff is not None:
+            fasta_output_filename = "predicted.fasta"
             with open(predicted_gff) as file:
                 predicted_fasta = parse_gff(file)
-            write_fasta(predicted_fasta)
+            write_fasta(predicted_fasta, fasta_output_filename)
 
-        if all([reference_fa, predicted_gff]) is not None:
-            run_blast(reference_fa, predicted_gff)
+            if reference_fa is not None:
+                database_filename = "reference_prot_db"
+                blast_database = make_blast_db(reference_fa, output_db_file=database_filename)
+                run_blast(predicted_fasta, database_input=database_filename, output_file=output_filename)
+                if os.path.exists(output_filename):
+                    alignment_dic = parse_blast_output(output_filename)
+                    # print("qseqid\tqlength\tsseqid\tpident\tqcov")
+                    # for key, *val in alignment_dic:
+                    #     print("\t".join([key] + list(val)))
 
-        # make_blast_db(database_input, "blast_protein_db")
+            else:
+                print("No reference genome given. For help run with -h option\n")
 
-
-
-
+        else:
+            print("No predicted .gff file given. For help run with -h option\n")
