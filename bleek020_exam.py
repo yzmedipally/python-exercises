@@ -147,7 +147,7 @@ if __name__ == '__main__':
 
         if predicted_gff is not None:
             with open(predicted_gff) as file:
-                predicted_fasta = parse_gff(str(file))
+                predicted_fasta = parse_gff(file)
             write_fasta(predicted_fasta)
 
         if all([reference_fa, predicted_gff]) is not None:
