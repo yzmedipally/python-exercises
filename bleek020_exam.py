@@ -2,7 +2,13 @@
 """
 Author: Hidde Bleeker
 
+WUR BIF30806 exam
 
+Not finished; When running the makeblastdb command, a very hard to debug code is returned:
+FileNotFoundError: [Errno 2] No such file or directory: 'makeblastdb -in yeast_proteins.fa
+-input_type fasta -dbtype prot -out blast_prot_db'
+
+Probably an alias is needed but not enough time
 """
 
 # imports
@@ -126,6 +132,12 @@ def write_fasta(fasta_dic, output_file):
 
 
 def make_blast_db(input_fasta, output_db_file="blast_prot_db"):
+    """ Create BLAST database from input reference genome
+
+    :param input_fasta: The fasta file to use as a database (string)
+    :param output_db_file: The name of the output database
+    :return: The name of the output database
+    """
     if not os.path.exists(output_db_file):
         blast_db_cmd = "makeblastdb -in {} -input_type fasta -dbtype prot -out {}".format(input_fasta, output_db_file)
         is_error = sbp.check_call(blast_db_cmd)
@@ -137,6 +149,13 @@ def make_blast_db(input_fasta, output_db_file="blast_prot_db"):
 
 
 def run_blast(query_input, database_input, output_file="yeast.blast"):
+    """ Run BLAST with query input to BLAST database
+
+    :param query_input: Query filename in (FASTA format)
+    :param database_input: The BLAST database
+    :param output_file: filename of the BLAST output
+    :return: filename of the BLAST output
+    """
     if not os.path.exists(output_filename):
         blastp_cmd = "blastp -query {} -task blastp -db {} -outfmt 7 -num_alignments 1 -out {}".format(
             query_input, database_input, output_filename)
@@ -147,6 +166,11 @@ def run_blast(query_input, database_input, output_file="yeast.blast"):
 
 
 def parse_blast_output(lines):
+    """ Parse the output of a BLAST search and put ID, qlength, sseqid, pident and qcoverage in a dictionary
+
+    :param lines: Input list of lines (or file)
+    :return: Dictionary with ID, qlength, sseqid, pident and qcoverage
+    """
     query_dic = {}
     for line in lines:
         if line.startswith("#"):
@@ -160,22 +184,48 @@ def parse_blast_output(lines):
 
 
 if __name__ == '__main__':
-    if len(argv) == 1:
+    # if len(argv) == 1:
+    #     print_help()
+    # else:
+    #     predicted_gff, reference_fa, output_filename = None, None, "yeast.blast"
+    #     try:
+    #         if "-h" in argv or "--help" in argv:
+    #             print_help()
+    #         elif "-p" in argv:
+    #             predicted_gff = next_arg_to_var(argv.index("-p"))
+    #         elif "-r" in argv:
+    #             reference_fa = next_arg_to_var(argv.index("-r"))
+    #         elif "-o" in argv:
+    #             output_filename = next_arg_to_var(argv.index("-o"))
+    #     except IndexError:
+    #         print_help()
+    #
+    #     if predicted_gff is not None:
+    #         fasta_output_filename = "predicted.fasta"
+    #         with open(predicted_gff) as file:
+    #             predicted_fasta = parse_gff(file)
+    #         write_fasta(predicted_fasta, fasta_output_filename)
+    #
+    #         if reference_fa is not None:
+    #             database_filename = "reference_prot_db"
+    #             blast_database = make_blast_db(reference_fa, output_db_file=database_filename)
+    #             run_blast(predicted_fasta, database_input=database_filename, output_file=output_filename)
+    #             if os.path.exists(output_filename):
+    #                 alignment_dic = parse_blast_output(output_filename)
+    #                 # print("qseqid\tqlength\tsseqid\tpident\tqcov")
+    #                 # for key, *val in alignment_dic:
+    #                 #     print("\t".join([key] + list(val)))
+    #
+    #         else:
+    #             print("No reference genome given. For help run with -h option\n")
+    #     else:
+    #         print("No predicted .gff file given. For help run with -h option\n")
+    if len(argv) != 4:
         print_help()
     else:
-        predicted_gff, reference_fa, output_filename = None, None, "yeast.blast"
-        try:
-            if "-h" in argv or "--help" in argv:
-                print_help()
-            elif "-p" in argv:
-                predicted_gff = next_arg_to_var(argv.index("-p"))
-            elif "-r" in argv:
-                reference_fa = next_arg_to_var(argv.index("-r"))
-            elif "-o" in argv:
-                output_filename = next_arg_to_var(argv.index("-o"))
-        except IndexError:
-            print_help()
-
+        predicted_gff = argv[1]
+        reference_fa = argv[2]
+        output_filename = "yeast.blast"
         if predicted_gff is not None:
             fasta_output_filename = "predicted.fasta"
             with open(predicted_gff) as file:
@@ -184,15 +234,10 @@ if __name__ == '__main__':
 
             if reference_fa is not None:
                 database_filename = "reference_prot_db"
-                blast_database = make_blast_db(reference_fa, output_db_file=database_filename)
-                run_blast(predicted_fasta, database_input=database_filename, output_file=output_filename)
-                if os.path.exists(output_filename):
-                    alignment_dic = parse_blast_output(output_filename)
-                    # print("qseqid\tqlength\tsseqid\tpident\tqcov")
-                    # for key, *val in alignment_dic:
-                    #     print("\t".join([key] + list(val)))
-
-            else:
-                print("No reference genome given. For help run with -h option\n")
-        else:
-            print("No predicted .gff file given. For help run with -h option\n")
+                # blast_database = make_blast_db(reference_fa, output_db_file=database_filename)
+                # run_blast(predicted_fasta, database_input=database_filename, output_file=output_filename)
+                # if os.path.exists(output_filename):
+                #     alignment_dic = parse_blast_output(output_filename)
+                #     print("qseqid\tqlength\tsseqid\tpident\tqcov")
+                #     for key, *val in alignment_dic:
+                #         print("\t".join([key] + list(val)))
