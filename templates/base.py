@@ -8,7 +8,6 @@ Author: Hidde Bleeker
 931202071020
 """
 
-
 # Imports
 from sys import argv
 

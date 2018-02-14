@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+"""
+Author: Hidde Bleeker
+"""
+
+# Imports:
 import re
 
 
