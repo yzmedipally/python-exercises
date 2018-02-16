@@ -11,6 +11,7 @@ Author: Hidde Bleeker
 from sys import argv
 import subprocess as sbp
 import os
+import re
 
 
 
@@ -50,12 +51,92 @@ def run_bwa(ref_genome, fw_read, rev_read, out_fn="mapped.sam"):
     return out_fn
 
 
+def parse_sam(lines):
+    """ Parse SAM-files, excluding entries with FLAG >= 2048
+
+    :param lines: List of lines in the gff format
+    :return: dictionary with QNAME as keys and list of tuples of FLAG, MAPQ,
+    sequence and quality.
+    """
+    # name_flag_mapq = re.compile(r'(\S+)\s(\d+)\s\S+\s\d+\s(\d+)')
+    # seq_qual = re.compile(r'([\S]+)\s([\S]+)\sNM:')
+    match = re.compile(r'(\S+)\s(\d+)\s(\S+)\s\d+\s(\d+)(\s\S+)'
+                       r'{4}\s+([\S]+)\s([\S]+)\s')
+    reads_dic = {}
+    for line in lines:
+        if line.startswith("@") or not line.strip():
+            continue
+        else:
+            [qname, flag, mapq, rname, sequence, quality] = \
+                [match.search(line).group(i) for i in [1, 2, 4, 3, 6, 7]]
+            if flag >= 2048:
+                continue
+            if qname not in reads_dic:
+                reads_dic[qname] = [(int(flag), int(mapq), rname, sequence,
+                                     quality)]
+            else:
+                reads_dic[qname].append((int(flag), int(mapq), rname, sequence,
+                                         quality))
+    return reads_dic
+
+
+def filter_mappings(mappings):
+    """ Filter the mapped reads based on their flags.
+    Print statistics to screen.
+    Read nuclear mappings to file.
+
+    :param mappings: Dictionary of mapped reads
+    :return: Filtered dictionary of remaining (nuclear) mappings and dic of
+    statistics of the organellar mappings
+    """
+    remaining = mappings.copy()
+    organellar = {}
+    stats = {'chloro': [],
+             'mito': [],
+             'total': []}
+    for key, value in mappings.items():
+        if all([any(value[0] == 99), any(value[0] == 147)]) or \
+                all([any(value[0] == 83), any(value[0] == 163)]):
+            organellar[key] = [value]
+            remaining.pop(key)
+    for key, value in organellar.items():
+        if 'chloro' in value[2]:
+            stats['chloro'].append(value[1])
+        if 'mito' in value[2]:
+            stats['mito'].append(value[1])
+        stats['total'].append(value[1])
+    return remaining, stats
+
+
+def output_reads_stats(remaining, stats):
+    """ Print out remaining stats (and forward/reverse fq files (no time))
+
+    :param remaining: dic with remaining mappings
+    :param stats: dict of stats chloro/mito mappings
+    :return: a file
+    """
+    print("Group\t#proper\tavg MAPQ")
+    for key, val in stats.items():
+        print("{}\t{}\t{}".format(key, len(val), sum(val) / len(val)))
+
+
 if __name__ == '__main__':
+    # Print help if not used correctly/wrong amount of arguments
     if not len(argv) == 4:
         print_help()
     else:
+        # Check if the input files are in the right format
         if any(argv[1].lower().endswith(ext) for ext in ['.fa', ',fasta']) \
             and any(argv[2].lower().endswith(ext) for ext in ['.fq', '.fastq'])\
             and any(argv[3].lower().endswith(ext) for ext in ['.fq', '.fastq']):
+
+            # Read arguments and use them to run bwa as defined in function
             reference, forward_read, reverse_read = argv[1], argv[2], argv[3]
-            print(run_bwa(reference, forward_read, reverse_read))
+            mapped = run_bwa(reference, forward_read, reverse_read)
+
+            # Open the dictionary with mapped reads and parse
+            with open(str(mapped), 'r') as alignments:
+                mapped_dic = parse_sam(alignments)
+                nuclear, statistics = filter_mappings(mapped_dic)
+                output_reads_stats(nuclear, statistics)
+
