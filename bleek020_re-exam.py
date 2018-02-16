@@ -138,6 +138,9 @@ if __name__ == '__main__':
             # Open the dictionary with mapped reads and parse
             with open(str(mapped), 'r') as alignments:
                 mapped_dic = parse_sam(alignments)
-                nuclear, statistics = filter_mappings(mapped_dic)
-                output_reads_stats(nuclear, statistics)
+
+# Not able to finish the statistics printing and returning output in the form
+# of nuc1.fq and nuc2.fq because of time constraints.
+                # nuclear, statistics = filter_mappings(mapped_dic)
+                # output_reads_stats(nuclear, statistics)
 
