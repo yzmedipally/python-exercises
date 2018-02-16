@@ -69,7 +69,7 @@ def parse_sam(lines):
         else:
             [qname, flag, mapq, rname, sequence, quality] = \
                 [match.search(line).group(i) for i in [1, 2, 4, 3, 6, 7]]
-            if flag >= 2048:
+            if int(flag) >= 2048:
                 continue
             if qname not in reads_dic:
                 reads_dic[qname] = [(int(flag), int(mapq), rname, sequence,
