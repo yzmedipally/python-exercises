@@ -101,11 +101,11 @@ def filter_mappings(mappings):
             organellar[key] = [value]
             remaining.pop(key)
     for key, value in organellar.items():
-        if 'chloro' in value[2]:
+        if 'chloro' in any(a[2] for a in value):
             stats['chloro'].append(value[1])
-        if 'mito' in value[2]:
+        if 'mito' in any(a[2] for a in value):
             stats['mito'].append(value[1])
-        stats['total'].append(value[1])
+        stats['total'].append(a[1] for a in value)
     return remaining, stats
 
 
