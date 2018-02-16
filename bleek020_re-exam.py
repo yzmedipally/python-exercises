@@ -39,9 +39,8 @@ def run_bwa(ref_genome, fw_read, rev_read, out_fn="mapped.sam"):
         is_err = sbp.check_call(ind_cmd, shell=True)
         if not is_err:
             print("Successfully created reference genome index with BWA")
-        map_cmd = "bwa mem -t 6 -k 21 {0} {1} {2} {3}"\
-            .format(ref_genome.split(".")[0], fw_read, rev_read,
-                    out_fn)
+        map_cmd = "bwa mem -t 6 -k 21 {0} {1} {2} > {3}"\
+            .format(ref_genome, fw_read, rev_read, out_fn)
         is_err = sbp.check_call(map_cmd, shell=True)
         if not is_err:
             print("Successfully mapped input files to reference genome")
