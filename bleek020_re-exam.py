@@ -95,8 +95,8 @@ def filter_mappings(mappings):
              'mito': [],
              'total': []}
     for key, value in mappings.items():
-        if all([any(value[0] == 99), any(value[0] == 147)]) or \
-                all([any(value[0] == 83), any(value[0] == 163)]):
+        if (any(value[0] == 99) and any(value[0] == 147)) or \
+                (any(value[0] == 83), any(value[0] == 163)):
             organellar[key] = [value]
             remaining.pop(key)
     for key, value in organellar.items():
