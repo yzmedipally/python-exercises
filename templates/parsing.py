@@ -8,26 +8,23 @@ import re
 
 
 def parse_fasta(lines):
-    """Parse a FASTA file (possibly with multiple sequences). Sequences are stored by ID in a dictionary.
+    """Parse a FASTA file. Sequences are stored by ID in a dictionary.
 
-    :param lines: list of lines (or a file) in FASTA format
-    :return: dictionary of {label:dna_seq}
+    :param lines: iterator of lines (e.g. in a FASTA file).
+    :returns: generator of dictionary of {label:dna_seq}
     """
-    seqs = {}
+    label, seq = "", []
     for line in lines:
-        if not line.strip():
+        if not line.strip() or line.startswith(';'):
             continue
         if line.startswith('>'):
-            has_comma = re.search(r">([\w ]+),[\w ]*", line)
-            if has_comma:
-                label = has_comma.group(1)
-            else:
-                label = line.strip()[1:]
-            seqs[label] = ""
+            if label:
+                yield label, "".join([subseq for subseq in seq])
+            label = line.strip()[1:]
+            seq = []
         else:
-            if label in seqs:
-                seqs[label] += line.strip()
-    return seqs
+            seq.append(line.strip())
+    yield label, "".join([subseq for subseq in seq])
 
 
 def parse_gff(lines):
