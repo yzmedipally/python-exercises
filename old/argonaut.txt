@@ -1,7 +1,0 @@
-XM_001694789   	Chlamydomonas reinhardtii     	67.53%	 3579
-XM_002906034   	Phytophthora infestans T30-4  	56.50%	 2784
-NM_001130718 XM_001176937 XM_001177941 XM_001178074 XM_793314	Strongylocentrotus purpuratus 	52.96%	 2868
-NM_166020      	Drosophila melanogaster       	50.80%	 4476
-NM_001102461   	Bombyx mori                   	49.69%	 2739
-NM_179453      	Arabidopsis thaliana          	45.54%	 3507
-NM_001022775   	Schizosaccharomyces pombe 972h-	39.88%	 2505
