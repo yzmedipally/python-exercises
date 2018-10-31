@@ -10,11 +10,7 @@ Author: Hidde Bleeker
 from sys import argv
 
 
-def sum_and_print(numbers):
-    """Sum and print a list of numbers"""
-    print(sum(numbers))
-
-
 if __name__ == '__main__':
     if len(argv) > 1:
-        sum_and_print(list(map(int, argv[1:])))
+        print("{} = {}".format("+".join(argv[1:]),
+                               sum(list(map(int, argv[1:])))))
