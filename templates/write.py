@@ -19,8 +19,5 @@ def write_fasta(fasta_dic, output_file):
             out.write("{}\n{}\n".format(key, val))
 
 
-
-
-
 if __name__ == '__main__':
     pass
