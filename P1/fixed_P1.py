@@ -11,6 +11,7 @@ from sys import argv, exit
 import subprocess
 import os.path
 
+
 def parse_fasta(lines):
     """Return dictionary of {label:dna_seq}
     
@@ -27,6 +28,7 @@ def parse_fasta(lines):
             seqs[label] += line.strip()[1:]
     return seqs
 
+
 def extract_kmers(seqs, k=15, skip_unknown=True):
     """Return dict of {kmer_seq: kmer_count}
 
@@ -36,14 +38,14 @@ def extract_kmers(seqs, k=15, skip_unknown=True):
         non-TGAC characters should be skipped
     """
     kmer_size = k
-    ch = {} #dict to store characters
-    res = {} #dict to store k-mers and counts
+    ch = {}  # dict to store characters
+    res = {}  # dict to store k-mers and counts
     for label, seq in seqs.items():
         for c in seq:
             if c not in ch:
                 ch[c] = 0
             ch[c] += 1
-        for i in range(len(seq) - kmer_size + 1):
+        for i in range(len(seq) - kmer_size):
             kmer = seq[i:i + kmer_size]
             count = True
             for c in kmer:
@@ -55,6 +57,7 @@ def extract_kmers(seqs, k=15, skip_unknown=True):
                 res[kmer] = 0
             res[kmer] += 1
     return res
+
 
 def print_stats(kmer_table):
     """Print the kmer statistics to stdout
@@ -76,6 +79,7 @@ def print_stats(kmer_table):
     print('----')
     return None
 
+
 def run_jellyfish(input_fn, kmer_size=15):
     """Run jellyfish program on fasta file
 
@@ -93,16 +97,16 @@ def run_jellyfish(input_fn, kmer_size=15):
     res = subprocess.check_output(cmd, shell=True)
     return res
 
+
 if __name__ == "__main__":
 
     # parse input data
-    if len(argv) == 2:
-        inp_fn = argv[1]
-    else:
-        print("Must include input file as command line argument. \n"\
-            "Quitting.")
+    if len(argv) != 2:
+        print("Must include input file as command line argument. \n"
+              "Quitting.")
         exit(1)
-    dna_seqs = parse_fasta(open(inp_fn))
+    with open(argv[1]) as inp_fn:
+        dna_seqs = parse_fasta(inp_fn)
     # extract k-mers of length 15 and print the results
     kmer_len = 15
     kmers = extract_kmers(dna_seqs, skip_unknown=True, k=kmer_len)
