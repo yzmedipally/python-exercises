@@ -5,6 +5,102 @@ Output is compared to jellyfish output
 Author: D.E. Bug; 
 fixed by: Hidde Bleeker
 931202071020
+
+Difference:
+1a2
+> '''Script to count the number of k-mers in a FASTA file
+3,5d3
+< '''
+< Author: D.E. Bug
+< Script to count the number of k-mers in a FASTA file
+6a5,7
+> Author: D.E. Bug;
+> fixed by: Hidde Bleeker
+> 931202071020
+9c10
+< from sys import argv
+---
+> import sys
+12a14
+>
+20c22
+<         if not line.stripit():
+---
+>         if not line.strip():
+26c28
+<             seqs[label] += line.strip()[1:]
+---
+>             seqs[label] += line.strip()
+28a31
+>
+34c37
+<     skip_unknown: bool, specifying wheter k-mers containing
+---
+>     skip_unknown: bool, specifying whether k-mers containing
+38,40c41,43
+<     ch = {} #dict to store characters
+<     res = {} #dict to store k-mers and counts
+<     for label, seq in seqs.items()
+---
+>     ch = {}  # dict to store characters
+>     res = {}  # dict to store k-mers and counts
+>     for label, seq in seqs.items():
+45,46c48,49
+<         for i in range(len(seq)-kmer_size):
+<             kmer = seq[i:i+kmer_size]
+---
+>         for i in range(len(seq) - kmer_size + 1):
+>             kmer = seq[i:i + kmer_size]
+51c54
+<             if skip_unknown is True and count is False:
+---
+>             if skip_unknown and not count:
+57a61
+>
+65c69
+<     unique = [i for i, j in res.items() if j==1]
+---
+>     unique = [i for i, j in res.items() if j == 1]
+74c78
+<         print(k, v)
+---
+>             print(k, v)
+77a82
+>
+85c90
+<     cmd = 'jellyphish count -m {} -s 1000000 -o {} {}'\
+---
+>     cmd = 'jellyfish count -m {} -s 1000000 -o {} {}'\
+87c92
+<     e = subprocess.check_output(cmd, shell=True)
+---
+>     subprocess.check_call(cmd, shell=True)
+92c97
+<     res = subprocess.check_call(cmd, shell=True)
+---
+>     res = subprocess.check_output(cmd, shell=True)
+94a100
+>
+98,99c104,110
+<     inp_fn = argv[1]
+<     dna_seqs = parse_fasta(open(inp_fn))
+---
+>     if len(sys.argv) != 2:
+>         print("Must include input file as command line argument. \n"
+>               "Quitting.")
+>         sys.exit(1)
+>     inp_fn = sys.argv[1]
+>     with open(inp_fn) as inp_file:
+>         dna_seqs = parse_fasta(inp_file)
+102c113
+<     kmers = extract_kmers(dna_seqs, skip_unknown=True, k=14)
+---
+>     kmers = extract_kmers(dna_seqs, skip_unknown=True, k=kmer_len)
+107c118
+<     print(str(jelly_out,'utf-8'))
+---
+>     print(str(jelly_out, encoding='utf-8'))
+
 """
 
 import sys
