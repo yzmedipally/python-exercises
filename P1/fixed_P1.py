@@ -110,7 +110,7 @@ if __name__ == "__main__":
         dna_seqs = parse_fasta(inp_file)
     # extract k-mers of length 15 and print the results
     kmer_len = 15
-    kmers = extract_kmers(dna_seqs, skip_unknown=True, k=14)
+    kmers = extract_kmers(dna_seqs, skip_unknown=True, k=kmer_len)
     print_stats(kmers)
     # run the tool jellyfish and print the results 
     jelly_out = run_jellyfish(inp_fn, kmer_size=kmer_len)
