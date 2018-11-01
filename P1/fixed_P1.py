@@ -7,7 +7,7 @@ fixed by: Hidde Bleeker
 931202071020
 """
 
-from sys import argv, exit
+import sys
 import subprocess
 import os.path
 
@@ -34,7 +34,7 @@ def extract_kmers(seqs, k=15, skip_unknown=True):
 
     seqs: dict of {label:dna_seq}
     k: int, specifying k-mer size
-    skip_unknown: bool, specifying wheter k-mers containing 
+    skip_unknown: bool, specifying whether k-mers containing
         non-TGAC characters should be skipped
     """
     kmer_size = k
@@ -66,7 +66,7 @@ def print_stats(kmer_table):
     """
     print("MY OUTPUT")
     res = kmer_table
-    unique = [i for i, j in res.items() if j==1]
+    unique = [i for i, j in res.items() if j == 1]
     print("Unique: {}".format(len(unique)))
     print("Distinct: {}".format(len(res)))
     total = sum(res.values())
@@ -89,7 +89,7 @@ def run_jellyfish(input_fn, kmer_size=15):
     out_fn = 'tomato{}'.format(kmer_size)
     cmd = 'jellyfish count -m {} -s 1000000 -o {} {}'\
         .format(kmer_size, out_fn, input_fn)
-    e = subprocess.check_call(cmd, shell=True)
+    subprocess.check_call(cmd, shell=True)
     if os.path.exists(out_fn):
         cmd = 'jellyfish stats {}'.format(out_fn)
     else:
@@ -101,11 +101,11 @@ def run_jellyfish(input_fn, kmer_size=15):
 if __name__ == "__main__":
 
     # parse input data
-    if len(argv) != 2:
+    if len(sys.argv) != 2:
         print("Must include input file as command line argument. \n"
               "Quitting.")
-        exit(1)
-    inp_fn = argv[1]
+        sys.exit(1)
+    inp_fn = sys.argv[1]
     with open(inp_fn) as inp_file:
         dna_seqs = parse_fasta(inp_file)
     # extract k-mers of length 15 and print the results
