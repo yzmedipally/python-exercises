@@ -45,7 +45,7 @@ def extract_kmers(seqs, k=15, skip_unknown=True):
             if c not in ch:
                 ch[c] = 0
             ch[c] += 1
-        for i in range(len(seq) - kmer_size):
+        for i in range(len(seq) - kmer_size + 1):
             kmer = seq[i:i + kmer_size]
             count = True
             for c in kmer:
@@ -89,7 +89,7 @@ def run_jellyfish(input_fn, kmer_size=15):
     out_fn = 'tomato{}'.format(kmer_size)
     cmd = 'jellyfish count -m {} -s 1000000 -o {} {}'\
         .format(kmer_size, out_fn, input_fn)
-    e = subprocess.check_output(cmd, shell=True)
+    e = subprocess.check_call(cmd, shell=True)
     if os.path.exists(out_fn):
         cmd = 'jellyfish stats {}'.format(out_fn)
     else:
@@ -105,11 +105,12 @@ if __name__ == "__main__":
         print("Must include input file as command line argument. \n"
               "Quitting.")
         exit(1)
-    with open(argv[1]) as inp_fn:
-        dna_seqs = parse_fasta(inp_fn)
+    inp_fn = argv[1]
+    with open(inp_fn) as inp_file:
+        dna_seqs = parse_fasta(inp_file)
     # extract k-mers of length 15 and print the results
     kmer_len = 15
-    kmers = extract_kmers(dna_seqs, skip_unknown=True, k=kmer_len)
+    kmers = extract_kmers(dna_seqs, skip_unknown=True, k=14)
     print_stats(kmers)
     # run the tool jellyfish and print the results 
     jelly_out = run_jellyfish(inp_fn, kmer_size=kmer_len)
