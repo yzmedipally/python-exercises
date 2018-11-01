@@ -24,7 +24,7 @@ def parse_fasta(lines):
             seq = []
         else:
             seq.append(line.strip())
-    yield label, "".join([subseq for subseq in seq])
+    yield label, "".join(seq)  # seq is already an iterator
 
 
 def parse_gff(lines):
