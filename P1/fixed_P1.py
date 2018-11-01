@@ -25,7 +25,7 @@ def parse_fasta(lines):
             label = line.strip()[1:]
             seqs[label] = ""
         else:
-            seqs[label] += line.strip()[1:]
+            seqs[label] += line.strip()
     return seqs
 
 
