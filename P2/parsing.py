@@ -3,10 +3,11 @@
 
 Author: Hidde Bleeker
 931202071020
+
+usage: {} input.gb output_filename
 """
 
 # Imports
-from operator import itemgetter
 from sys import argv
 
 
@@ -49,31 +50,50 @@ def calc_gc_cont(dna_seq):
     return sum(count) / len(count) * 100
 
 
-def write_fasta(seq_dict, output_fn):
+def write_sorted_fasta(seq_dict, output_fn):
     """Print fasta file from given sequence dictionary
 
     :param seq_dict: dict, with GB accession numbers as keys and (organism, seqeuences,
     GC_percentage) as values
-    :param output_fn: Name of the FASTA output file to print the sequences to
+    :param output_fn: Name of the output file to print the sequences to, without extension
     :return: None, it is a function that writes a file output
     """
     seqs_sorted = sorted(seq_dict.items(), key=lambda v: v[1][2], reverse=True)
-    with open(output_fn, 'w') as out_f:
+    with open(output_fn + '.fasta', 'w') as out_f:
         for entry in seqs_sorted:
-            out_f.write("".join(['>', str(entry[0]), ' ', str(entry[1][0])]))
-            out_f.write(entry[1][1])
+            out_f.write("".join(['>', str(entry[0]), ' ', str(entry[1][0]), '\n']))
+            out_f.write(entry[1][1] + '\n')
+
+
+def write_sorted_stats(seq_dict, output_fn):
+    """Print statistics file from given sequence dictionary
+
+    :param seq_dict: dict, with GB accession numbers as keys and (organism, seqeuences,
+    GC_percentage) as values
+    :param output_fn: Name of the output file to print the sequences to, without extension
+    :return:
+    """
+    seqs_sorted = sorted(seq_dict.items(), key=lambda v: v[1][2], reverse=True)
+    with open(output_fn + '.csv', 'w') as out_f:
+        for entry in seqs_sorted:
+            out_f.write("{0:s}\t{1:s}\t{2:.2f}\t{3:d}\n"
+                        .format(entry[0], entry[1][0], entry[1][2], len(entry[1][1])))
 
 
 if __name__ == '__main__':
-    if len(argv) != 2:
-        print("Not the right amount of command line arguments given.\nQuitting.")
+    # Check for right amount of input arguments
+    if len(argv) != 3:
+        print("Not the right amount of command line arguments given...\nQuitting.")
+        print(__doc__.format(argv[0]))
         exit(1)
+    # Check if second input argument has the correct file extension
     elif not argv[1].lower().endswith('.gb'):
-        print("File in incorrect input format given (should be .gb).\nQuitting.")
+        print("File in incorrect input format given (should be .gb)...\nQuitting.")
+        print(__doc__.format(argv[0]))
         exit(1)
     else:
+        # Create dictionary from parsed GB sequences and write FASTA/stats to files.
         sequences = {acc: (name, seq, calc_gc_cont(seq)) for acc, (name, seq) in
                      parse_gb_input(argv[1])}
-        # Create list of sequences sorted by GC percentage
-        # seqs_sorted = sorted(sequences.items(), key=lambda v: v[1][2], reverse=True)
-        # print([(e[0], e[1][2]) for e in seqs_sorted])
+        write_sorted_fasta(sequences, argv[2])
+        write_sorted_stats(sequences, argv[2])
