@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse a Genebank formatted input file, output FASTA file and tab-delimited statistics file
+"""Parse a GenBank formatted input file, output FASTA file and tab-delimited statistics file
 
 Author: Hidde Bleeker
 931202071020
@@ -12,7 +12,7 @@ from sys import argv
 
 
 def parse_gb_input(gb_filename):
-    """Parse a GeneBank formatted file and return dictionary with information per record
+    """Parse a GenBank formatted file and return dictionary with information per record
 
     :param gb_filename: str, input filename
     :return: generator, with list entries as [accession_number, (organism_name, sequence)]
