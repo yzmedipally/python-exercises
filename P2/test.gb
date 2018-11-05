@@ -1,0 +1,341 @@
+LOCUS       NM_179453               3507 bp    mRNA    linear   PLN 21-AUG-2009
+DEFINITION  Arabidopsis thaliana AGO1 (ARGONAUTE 1); endoribonuclease/ miRNA
+            binding / protein binding / siRNA binding (AGO1) mRNA, complete
+            cds.
+ACCESSION   NM_179453
+VERSION     NM_179453.2  GI:145361472
+KEYWORDS    .
+SOURCE      Arabidopsis thaliana (thale cress)
+  ORGANISM  Arabidopsis thaliana
+            Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
+            Spermatophyta; Magnoliophyta; eudicotyledons; core eudicotyledons;
+            rosids; malvids; Brassicales; Brassicaceae; Camelineae;
+            Arabidopsis.
+COMMENT     REVIEWED REFSEQ: This record has been curated by TAIR. The
+            reference sequence was derived from AT1G48410.2.
+            On Apr 18, 2007 this sequence version replaced gi:30694319.
+FEATURES             Location/Qualifiers
+     source          1..3507
+                     /organism="Arabidopsis thaliana"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:3702"
+                     /chromosome="1"
+                     /ecotype="Columbia"
+     gene            1..3507
+                     /gene="AGO1"
+                     /locus_tag="AT1G48410"
+                     /gene_synonym="ARGONAUTE 1; T1N15.2; T1N15_2"
+                     /function="Encodes an RNA Slicer that selectively recruits
+                     microRNAs and siRNAs. There is currently no evidence that
+                     AGO1 Slicer is in a high molecular weight RNA-induced
+                     silencing complex (RISC). Mutants are defective in
+                     post-transcriptional gene silencing and have pleiotropic
+                     developmental and morphological defects. Through its
+                     action on the regulation of ARF17 expression, the protein
+                     regulates genes involved at the cross talk between auxin
+                     and light signaling during adventitious root development.
+                     AGO1 seems to be targeted for degradation by silencing
+                     suppressor F-box-containing proteins from Turnip yellow
+                     virus and Cucurbit aphid-borne yellow virus."
+                     /db_xref="GeneID:841262"
+                     /db_xref="TAIR:AT1G48410"
+     CDS             168..3320
+                     /gene="AGO1"
+                     /locus_tag="AT1G48410"
+                     /gene_synonym="ARGONAUTE 1; T1N15.2; T1N15_2"
+                     /note="ARGONAUTE 1 (AGO1); FUNCTIONS IN: protein binding,
+                     endoribonuclease activity, siRNA binding, miRNA binding;
+                     INVOLVED IN: in 10 processes; LOCATED IN: cytosol,
+                     nucleus, cytoplasm; EXPRESSED IN: 25 plant structures;
+                     EXPRESSED DURING: 13 growth stages; CONTAINS InterPro
+                     DOMAIN/s: Region of unknown function DUF1785
+                     (InterPro:IPR014811), Stem cell self-renewal protein Piwi
+                     (InterPro:IPR003165), Argonaute and Dicer protein, PAZ
+                     (InterPro:IPR003100), Polynucleotidyl transferase,
+                     Ribonuclease H fold (InterPro:IPR012337); BEST Arabidopsis
+                     thaliana protein match is: ZLL (ZWILLE); translation
+                     initiation factor (TAIR:AT5G43810.1); Has 27210 Blast hits
+                     to 14266 proteins in 965 species: Archae - 20; Bacteria -
+                     4994; Metazoa - 12179; Fungi - 2213; Plants - 4305;
+                     Viruses - 364; Other Eukaryotes - 3135 (source: NCBI
+                     BLink)."
+                     /codon_start=1
+                     /product="AGO1 (ARGONAUTE 1); endoribonuclease/ miRNA
+                     binding / protein binding / siRNA binding"
+                     /protein_id="NP_849784.1"
+                     /db_xref="GI:30694320"
+                     /db_xref="GeneID:841262"
+                     /db_xref="TAIR:AT1G48410"
+                     /translation="MVRKRRTDAPSEGGEGSGSREAGPVSGGGRGSQRGGFQQGGGQH
+                     QGGRGYTPQPQQGGRGGRGYGQPPQQQQQYGGPQEYQGRGRGGPPHQGGRGGYGGGRG
+                     GGPSSGPPQRQSVPELHQATSPTYQAVSSQPTLSEVSPTQVPEPTVLAQQFEQLSVEQ
+                     GAPSQAIQPIPSSSKAFKFPMRPGKGQSGKRCIVKANHFFAELPDKDLHHYDVTITPE
+                     VTSRGVNRAVMKQLVDNYRDSHLGSRLPAYDGRKSLYTAGPLPFNSKEFRINLLDEEV
+                     GAGGQRREREFKVVIKLVARADLHHLGMFLEGKQSDAPQEALQVLDIVLRELPTSRIR
+                     YIPVGRSFYSPDIGKKQSLGDGLESWRGFYQSIRPTQMGLSLNIDMSSTAFIEANPVI
+                     QFVCDLLNRDISSRPLSDADRVKIKKALRGVKVEVTHRGNMRRKYRISGLTAVATREL
+                     TFPVDERNTQKSVVEYFHETYGFRIQHTQLPCLQVGNSNRPNYLPMEVCKIVEGQRYS
+                     KRLNERQITALLKVTCQRPIDREKDILQTVQLNDYAKDNYAQEFGIKISTSLASVEAR
+                     ILPPPWLKYHESGREGTCLPQVGQWNMMNKKMINGGTVNNWICINFSRQVQDNLARTF
+                     CQELAQMCYVSGMAFNPEPVLPPVSARPEQVEKVLKTRYHDATSKLSQGKEIDLLIVI
+                     LPDNNGSLYGDLKRICETELGIVSQCCLTKHVFKMSKQYMANVALKINVKVGGRNTVL
+                     VDALSRRIPLVSDRPTIIFGADVTHPHPGEDSSPSIAAVVASQDWPEITKYAGLVCAQ
+                     AHRQELIQDLFKEWKDPQKGVVTGGMIKELLIAFRRSTGHKPLRIIFYRDGVSEGQFY
+                     QVLLYELDAIRKACASLEAGYQPPVTFVVVQKRHHTRLFAQNHNDRHSVDRSGNILPG
+                     TVVDSKICHPTEFDFYLCSHAGIQGTSRPAHYHVLWDENNFTADGLQSLTNNLCYTYA
+                     RCTRSVSIVPPAYYAHLAAFRARFYMEPETSDSGSMASGSMARGGGMAGRSTRGPNVN
+                     AAVRPLPALKENVKRVMFYC"
+     misc_feature    699..3317
+                     /gene="AGO1"
+                     /locus_tag="AT1G48410"
+                     /gene_synonym="ARGONAUTE 1; T1N15.2; T1N15_2"
+                     /note="protein argonaute; Provisional; Region: PLN03202"
+                     /db_xref="CDD:178743"
+     misc_feature    1173..1331
+                     /gene="AGO1"
+                     /locus_tag="AT1G48410"
+                     /gene_synonym="ARGONAUTE 1; T1N15.2; T1N15_2"
+                     /note="Domain of unknown function (DUF1785); Region:
+                     DUF1785; pfam08699"
+                     /db_xref="CDD:149679"
+     misc_feature    1335..1673
+                     /gene="AGO1"
+                     /locus_tag="AT1G48410"
+                     /gene_synonym="ARGONAUTE 1; T1N15.2; T1N15_2"
+                     /note="PAZ domain, argonaute_like subfamily. Argonaute is
+                     part of the RNA-induced silencing complex (RISC), and is
+                     an endonuclease that plays a key role in the RNA
+                     interference pathway. The PAZ domain has been named after
+                     the proteins Piwi,Argonaut, and...; Region:
+                     PAZ_argonaute_like; cd02846"
+                     /db_xref="CDD:30331"
+     misc_feature    order(1476..1478,1521..1523,1554..1556,1566..1568,
+                     1620..1622,1641..1643,1647..1649)
+                     /gene="AGO1"
+                     /locus_tag="AT1G48410"
+                     /gene_synonym="ARGONAUTE 1; T1N15.2; T1N15_2"
+                     /note="nucleic acid-binding interface; other site"
+                     /db_xref="CDD:30331"
+     misc_feature    1806..3161
+                     /gene="AGO1"
+                     /locus_tag="AT1G48410"
+                     /gene_synonym="ARGONAUTE 1; T1N15.2; T1N15_2"
+                     /note="Piwi_ago-like: PIWI domain, Argonaute-like
+                     subfamily. Argonaute is the central component of the
+                     RNA-induced silencing complex (RISC) and related
+                     complexes. The PIWI domain is the C-terminal portion of
+                     Argonaute and consists of two subdomains, one of...;
+                     Region: Piwi_ago-like; cd04657"
+                     /db_xref="CDD:72942"
+     misc_feature    order(2238..2240,2250..2252,2286..2297,2304..2306,
+                     2328..2330,2337..2339,2349..2351,2361..2363)
+                     /gene="AGO1"
+                     /locus_tag="AT1G48410"
+                     /gene_synonym="ARGONAUTE 1; T1N15.2; T1N15_2"
+                     /note="5' RNA guide strand anchoring site; other site"
+                     /db_xref="CDD:72942"
+     misc_feature    order(2451..2453,2457..2459,2709..2711,3129..3131)
+                     /gene="AGO1"
+                     /locus_tag="AT1G48410"
+                     /gene_synonym="ARGONAUTE 1; T1N15.2; T1N15_2"
+                     /note="active site"
+                     /db_xref="CDD:72942"
+ORIGIN
+       1  gtaaaatctc atttctttga gttatctcgt ttgttcggag ttagagagag agagaaagat
+      61  atagagagaa cacagagagg cgagagcgac gtagggttgg tgtttcgtac ggattttctc
+     121  ggtcaatctt agtttctccg gcgagagatt gcttttcagg aatcatcatg gtgagaaaga
+     181  gaagaacgga tgctccatct gaaggaggtg aaggctctgg gtctcgtgaa gctggtccag
+     241  tctcaggtgg tggacgtggt tcacagcgag gtggtttcca gcagggagga ggacaacacc
+     301  aaggtggaag gggttatact cctcaacctc aacagggagg tcgtggtggt cgtggatatg
+     361  ggcaaccacc acaacagcaa caacagtatg gaggaccaca agagtaccaa ggaagaggaa
+     421  gaggaggacc tcctcatcaa ggaggtcgag gagggtatgg cggtggccgt ggaggtggac
+     481  cttcttctgg accaccgcag agacaatcag ttcccgagct gcatcaagct acctcaccta
+     541  cttatcaagc ggtgtcttct cagcctacac tgtctgaggt gagtcctacc caggtaccag
+     601  aacctactgt tctggctcag caatttgaac aactctctgt tgaacaagga gctcccagtc
+     661  aggcaatcca gcctatacct tcttctagca aggctttcaa gtttccaatg aggcctggta
+     721  aaggacagag tggaaagcgt tgcattgtga aggctaacca tttctttgct gaactgcctg
+     781  ataaggattt gcaccattat gatgttacca ttactccgga agttacatca aggggtgtca
+     841  atcgtgctgt gatgaaacaa cttgttgata attatcgtga ttctcacctt ggaagtcgtc
+     901  ttccagcgta tgatggtcga aaaagtcttt acactgctgg tccacttccc tttaactcca
+     961  aggagttcag aatcaatctt cttgacgaag aagtaggggc tggaggtcaa agacgagaaa
+    1021  gggaatttaa agttgtgatc aagctagttg cacgtgctga tctgcatcac ctaggaatgt
+    1081  ttttggaggg gaaacaatca gatgccccac aggaagctct gcaggttctt gacattgttc
+    1141  ttcgtgagct gccgacctct agaatcaggt atattccggt gggccggtcc ttttattccc
+    1201  ctgatatagg aaaaaaacaa tcattggggg atggcttgga gagctggcgt ggattctacc
+    1261  aaagcattcg tcctacacag atgggcttat cactcaatat tgatatgtca tcgacagcct
+    1321  tcatagaggc aaaccctgtg attcagtttg tctgtgattt gcttaaccgg gatatttctt
+    1381  ctcgaccttt atctgatgct gatcgtgtta agataaaaaa ggctcttaga ggtgtcaaag
+    1441  ttgaagtgac tcatcgagga aacatgcgcc ggaagtaccg catttccggt ttgactgctg
+    1501  tggccactcg ggaattgaca ttcccagtag atgaaagaaa tactcagaaa tctgttgtag
+    1561  aatacttcca cgaaacatat ggttttcgca ttcagcacac tcaactacca tgcttgcaag
+    1621  ttgggaattc taataggcct aattacttac caatggaggt atgcaagatt gttgaaggcc
+    1681  agcggtattc caaaagattg aatgagagac agatcactgc tttgctgaag gttacctgtc
+    1741  agcgcccgat agatcgagaa aaagatatct tacagacggt gcaactcaat gattatgcta
+    1801  aagataatta tgctcaagag tttggcatca aaataagtac ttctctggct tctgttgagg
+    1861  ctcgtatact gcctcctcca tggcttaagt accacgagtc tggaagggaa gggacttgtc
+    1921  tgccacaagt tggtcaatgg aacatgatga ataagaaaat gatcaatggt ggaacggtga
+    1981  ataattggat ctgcatcaac ttttctaggc aagtgcagga caatctagcg cgtacatttt
+    2041  gtcaggaact tgctcaaatg tgttacgtat ctggcatggc atttaatccg gaaccagtcc
+    2101  tcccaccagt cagtgctcgc cctgagcaag tagagaaggt cttgaagact agatatcatg
+    2161  atgccacatc aaaactctcc caaggaaaag aaattgatct gcttattgtc attctgcccg
+    2221  ataataatgg atcattatac ggtgatttga aacgcatatg tgagactgaa ctcggcatag
+    2281  tctctcaatg ttgcctgaca aagcatgtct ttaagatgag caaacaatac atggctaatg
+    2341  ttgcgctgaa gattaatgtg aaggttggag gaagaaacac agtgcttgtt gatgctctat
+    2401  ctaggcggat tcctctagtc agtgatcgac ccaccattat atttggtgct gatgttaccc
+    2461  accctcaccc tggagaggat tcaagcccat ctattgctgc tgttgtggca tctcaggatt
+    2521  ggcctgaaat cactaaatat gctggattag tttgcgctca agcgcatagg caggagctca
+    2581  ttcaggatct gttcaaagag tggaaggatc ctcagaaagg tgtggtgact ggtggcatga
+    2641  taaaggagtt gctcatagcc ttccgtagat caactgggca taaaccacta aggatcatct
+    2701  tctacaggga tggagtcagt gagggacaat tttaccaagt tttgctctat gaacttgatg
+    2761  ccatccgcaa ggcctgtgct tcgctggaag caggttatca accaccagtg acatttgtgg
+    2821  tggtgcagaa gcgtcatcac acgaggctgt ttgctcagaa ccacaatgat cgccattcgg
+    2881  tggacagaag tgggaatatt ttacctggca ctgttgtgga ctctaaaatc tgccacccta
+    2941  cagagtttga cttttacctc tgtagtcatg ctggtattca gggcacttct cgacctgctc
+    3001  attaccacgt tctttgggat gagaacaact ttactgcaga tggacttcaa tctctgacca
+    3061  ataacttatg ttacacgtat gcaagatgca cacgctcagt ttcaattgtt ccccctgcat
+    3121  attatgcaca tctagcagct tttagggctc gattctacat ggagccagag acatcagaca
+    3181  gtggctcaat ggctagtggg agcatggcac gtggaggtgg aatggctggt agaagcacac
+    3241  gcgggcctaa tgtcaatgct gcagtgaggc cactcccagc tctgaaagag aatgtgaagc
+    3301  gtgtcatgtt ctactgctga gttgattcac cctctatcta tctttatgac ctaaattaat
+    3361  gaagaatatc atgtatgctt tctaagactt atcgtgtgtt tggatatttc atcactcttt
+    3421  ctctatgagt atgagatgct ttatgactct tgtttgacaa ctactaaaat ttattattca
+    3481  aaacagactt tgatcctttc tttaact
+//
+LOCUS       NM_001130718            2868 bp    mRNA    linear   INV 03-AUG-2008
+DEFINITION  Strongylocentrotus purpuratus argonaute 1 (ago1), mRNA.
+ACCESSION   NM_001130718 XM_001176937 XM_001177941 XM_001178074 XM_793314
+VERSION     NM_001130718.1  GI:195539326
+KEYWORDS    .
+SOURCE      Strongylocentrotus purpuratus
+  ORGANISM  Strongylocentrotus purpuratus
+            Eukaryota; Metazoa; Echinodermata; Eleutherozoa; Echinozoa;
+            Echinoidea; Euechinoidea; Echinacea; Echinoida;
+            Strongylocentrotidae; Strongylocentrotus.
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence was derived from EU733246.1.
+            On or before Aug 3, 2008 this sequence version replaced
+            gi:115686209, gi:115686211, gi:115972990, gi:115972988.
+FEATURES             Location/Qualifiers
+     source          1..2868
+                     /organism="Strongylocentrotus purpuratus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:7668"
+     gene            1..2868
+                     /gene="ago1"
+                     /note="argonaute 1"
+                     /db_xref="GeneID:593855"
+     CDS             1..2868
+                     /gene="ago1"
+                     /codon_start=1
+                     /product="argonaute 1"
+                     /protein_id="NP_001124190.1"
+                     /db_xref="GI:195539327"
+                     /db_xref="GeneID:593855"
+                     /translation="MYQPPFPPNFPYGMPNYPPNQPGIPGQFPPGGPPGGPPGGPPPG
+                     GPPGGGPPGGPPGGPPSGPPGGPPGGPPFTPPPSQQPPPPGGPPQPPGTPPVAPTELV
+                     AMPRRPGFGIDGRPIALRANHFQVKIPPLDLFHYEVNITPEKCPRRINRDVIDTLVTA
+                     YKGRFFQNNLPVFDGRTNMYCKDEIPLDREKQVELEVTLPGEGKDRIFKASIKFEGKV
+                     SLSLLEAALKGEVMNIPHEAVQALDVIMRHLPSLRYTPVGRSFFSPPEEYSHPLGGGR
+                     EVWFGFHQSIRPSMWKMMLNIDVSATAFYSCQSVIDFLCEVLDIQDLSDQRRPLSDSH
+                     RVKFTKEIKGLKIEITHCGNMKRKYRVCNVTKRSAQTQTFPWQLENGQTVECTVAKYF
+                     RERHNLILQYPHLPCLQVGQEQRHTYLPLEVCNIVAGQRCIKKLTDLQTSTMIKATAR
+                     SAPDREKEIKSLVHKADFNNDQYVRQFGLSISNEMVTIEGRVLPAPKIQYGGKLNKPQ
+                     QAIPNQGVWDMRGKQFHFGVEIEVWAIACFAPQHQCREEALRNFTLQLQKISNEAGMP
+                     IKWQPGFCKYAVGADQVEAMFRHLKKMWPKLQLIIVVLPGKTPVYAEVKRVGDILLGI
+                     ATQCVQVKNVNRTTAQTLSNLCLKIKVKLGGVNNILAPNIRPRIFSEPVIFCGADVTH
+                     PPAGDDKKPSIAAVVGSMDGHPSRYCASVRIQTHRVEIIQDLQAMVKELLVEFYKSTR
+                     YKPARIIMYRDGVSEGQFLQVLANEMNAIRDACRSLEEGYEPGITFIVVQKRHHTRLF
+                     CAERREQIGRSGNIPAGTTVDSGITHPLEYDFYLCSHAGIQGTSRPSHYHVLWDDNGF
+                     KADELQCLTYQLCHTYVRCTRSVSIPAPAYYAHLVAFRARYHLVEKDHDRYDHDSVIS
+                     SANSNGGDGSHHGRDGYGRTPKEMSAAIKVHDDTLKVMYFA"
+     misc_feature    319..2676
+                     /gene="ago1"
+                     /note="protein argonaute; Provisional; Region: PLN03202"
+                     /db_xref="CDD:178743"
+     misc_feature    763..915
+                     /gene="ago1"
+                     /note="Domain of unknown function (DUF1785); Region:
+                     DUF1785; pfam08699"
+                     /db_xref="CDD:149679"
+     misc_feature    922..1281
+                     /gene="ago1"
+                     /note="PAZ domain, argonaute_like subfamily. Argonaute is
+                     part of the RNA-induced silencing complex (RISC), and is
+                     an endonuclease that plays a key role in the RNA
+                     interference pathway. The PAZ domain has been named after
+                     the proteins Piwi,Argonaut, and...; Region:
+                     PAZ_argonaute_like; cd02846"
+                     /db_xref="CDD:30331"
+     misc_feature    order(1075..1077,1120..1122,1162..1164,1174..1176,
+                     1228..1230,1249..1251,1255..1257)
+                     /gene="ago1"
+                     /note="nucleic acid-binding interface; other site"
+                     /db_xref="CDD:30331"
+     misc_feature    1414..2697
+                     /gene="ago1"
+                     /note="Piwi_ago-like: PIWI domain, Argonaute-like
+                     subfamily. Argonaute is the central component of the
+                     RNA-induced silencing complex (RISC) and related
+                     complexes. The PIWI domain is the C-terminal portion of
+                     Argonaute and consists of two subdomains, one of...;
+                     Region: Piwi_ago-like; cd04657"
+                     /db_xref="CDD:72942"
+     misc_feature    order(1831..1833,1843..1845,1879..1890,1897..1899,
+                     1921..1923,1930..1932,1942..1944,1954..1956)
+                     /gene="ago1"
+                     /note="5' RNA guide strand anchoring site; other site"
+                     /db_xref="CDD:72942"
+     misc_feature    order(2035..2037,2041..2043,2251..2253,2665..2667)
+                     /gene="ago1"
+                     /note="active site"
+                     /db_xref="CDD:72942"
+ORIGIN
+       1  atgtatcaac caccctttcc accaaatttc ccatatggga tgcccaacta tccgccaaat
+      61  caacctggaa tcccagggca gttcccaccc ggtggtcccc ccgggggtcc gcccggaggt
+     121  cctccacctg gtggccctcc cggcggcggc ccaccaggtg gtccccctgg tggccctcca
+     181  agtggccctc caggtggccc acctggtggt ccccccttca cccctcctcc aagccaacag
+     241  cccccacccc ctggggggcc tccgcaacca ccaggtaccc ctcccgttgc tcccacagag
+     301  ctggtagcca tgcccaggag gcctggcttt ggtatagacg gtcgtcctat cgcccttcgt
+     361  gcaaaccact tccaggtgaa gatcccgccc ctggatcttt tccattatga agttaacatc
+     421  actccagaaa agtgtcccag gagaatcaac agagatgtga tagacacgct agtgactgcc
+     481  tacaaaggga gattctttca gaacaatctg cctgtgtttg acgggaggac aaacatgtac
+     541  tgtaaagatg agattccact agatcgggaa aagcaagtgg aactcgaagt gaccttaccc
+     601  ggtgaaggga aagacaggat attcaaagct tccatcaagt ttgaaggcaa ggtcagtttg
+     661  tccctgctag aggctgccct gaagggggaa gtgatgaaca tcccacacga ggctgtgcaa
+     721  gccctggatg tcatcatgag acatctacct tcactgaggt acaccccggt gggtcgatcc
+     781  ttcttctccc ctcccgagga gtactcccat cccttgggtg gtggtcgaga ggtgtggttt
+     841  ggtttccatc agagcatccg cccatccatg tggaaaatga tgctcaatat agacgtgtct
+     901  gcaacggcct tctacagctg tcaatcagtg atagacttcc tgtgtgaggt cctggacatc
+     961  caggatctat cggatcaacg gcgccctcta tcagactcac atagagtgaa gttcaccaaa
+    1021  gagatcaaag gactaaagat tgagatcact cactgtggaa acatgaagag aaaatacaga
+    1081  gtgtgcaatg tgaccaagag atctgcacag acacaaacgt tcccatggca actagagaat
+    1141  ggtcaaacag tggaatgcac agtggccaaa tacttcagag aaagacataa tctcatcttg
+    1201  caataccctc atctcccctg tctgcaggtt ggacaggagc agcgccacac ctacctacct
+    1261  ctggaggttt gcaatatcgt agctgggcag cgctgcatta agaaactcac tgaccttcag
+    1321  acgtctacca tgataaaggc cacagccaga tcagccccag acagagagaa agaaatcaaa
+    1381  agtctggtac ataaagctga cttcaacaat gaccagtatg taaggcagtt tgggttgagt
+    1441  atcagtaatg agatggtcac catagaaggc agagttctac cagctccgaa gatccaatat
+    1501  ggaggaaagt taaacaagcc ccagcaagcc atccctaacc agggtgtgtg ggacatgaga
+    1561  ggcaaacagt tccactttgg ggttgagatt gaagtgtggg ccattgcctg ctttgcaccc
+    1621  cagcatcaat gcagggaaga agccctcagg aatttcacac tccagcttca gaagatctcc
+    1681  aacgaagctg gcatgcctat caaatggcag ccgggcttct gcaagtacgc cgtgggcgcc
+    1741  gatcaggtgg aagccatgtt caggcatctc aagaagatgt ggcccaaact ccagctcatc
+    1801  atcgtcgttc tgccgggcaa gacacccgtc tatgctgaag tgaagcgagt tggtgacatt
+    1861  ctgctaggta tagccacaca gtgtgtacag gtcaagaatg tgaacagaac cacggcacaa
+    1921  accctctcca atctctgcct caagatcaaa gtcaaactgg gaggagtgaa caacatcctg
+    1981  gcccctaaca tcagaccccg catatttagc gagcctgtca tcttttgcgg agctgacgtt
+    2041  acgcatcccc cagccggtga tgataagaaa ccttctatcg cggctgttgt gggaagtatg
+    2101  gacggccatc ctagccgtta ctgcgcgagt gtccgcattc agactcaccg tgtcgagatc
+    2161  atccaggacc tgcaggccat ggtcaaggag ctgctcgttg agttctacaa gtcgaccagg
+    2221  tacaagccag ccaggatcat catgtacagg gatggggtca gcgaaggtca attcttacag
+    2281  gttctagcca atgagatgaa cgctatcaga gatgcctgca ggtcactgga ggaaggttac
+    2341  gagcctggta tcacgttcat tgtggtgcag aagagacatc ataccagact cttctgtgct
+    2401  gagagaagag aacagattgg aaggagtggt aacatcccag caggtactac agtagacagc
+    2461  ggcatcaccc atcctctaga atatgacttc tacctgtgca gtcacgctgg tattcagggc
+    2521  accagtcgtc cctctcacta ccacgtcctc tgggacgaca acggtttcaa ggctgacgaa
+    2581  ctccagtgtc taacctacca gctgtgccac acctacgtac gctgcacccg tagcgtgtcc
+    2641  atccctgccc ccgcctacta cgcccacctg gtggccttcc gtgccagata ccatctggta
+    2701  gagaaggacc acgatagata tgaccatgac agtgtcatat ccagtgcaaa cagcaatggg
+    2761  ggagacggaa gccaccacgg acgtgacggc tacggacgca cccccaagga gatgtctgct
+    2821  gccatcaagg ttcatgacga tacactcaag gtcatgtact tcgcctag
+//
