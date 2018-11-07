@@ -13,7 +13,8 @@ from operator import itemgetter
 
 
 def parse_gb_input(gb_filename):
-    """Parse a GenBank formatted file and return dictionary with info per record
+    """Parse a GenBank formatted file and return dictionary with info per
+    record
 
     :param gb_filename: str, input filename
     :return: generator, with elements as accession_nr, organism_name, sequence
