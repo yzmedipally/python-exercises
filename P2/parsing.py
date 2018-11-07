@@ -95,7 +95,9 @@ if __name__ == '__main__':
     else:
         # Create dictionary from parsed GB sequences and write FASTA/stats to
         # files.
-        sequences = [{'acc': acc, 'org_name': name, 'seq': seq, 'GC_content': calc_gc_cont(seq), 'length': len(seq)} for acc, name, seq in parse_gb_input(argv[1])]
+        sequences = [{'acc': acc, 'org_name': name, 'seq': seq,
+                      'GC_content': calc_gc_cont(seq), 'length': len(seq)}
+                     for acc, name, seq in parse_gb_input(argv[1])]
 
         sorted_sequences = sorted(sequences, key=itemgetter('GC_content'),
                                   reverse=True)
