@@ -46,7 +46,7 @@ def calc_gc_cont(dna_seq):
     :param dna_seq: str, DNA/RNA sequence
     :return: float, percentage of G+C in the sequence
     """
-    count = [1 if _s.upper() in 'GC' else 0 for _s in dna_seq]
+    count = [1 if _s in 'GC' else 0 for _s in dna_seq.upper()]
     return sum(count) / len(count) * 100
 
 
