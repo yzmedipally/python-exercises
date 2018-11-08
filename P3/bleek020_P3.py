@@ -120,4 +120,5 @@ if __name__ == "__main__":
     # original file, the average quality score in the trimmed file, and the
     # improvement in average quality, in tab-delimited columns.
     for i, (og, trim) in enumerate(zip(avg_qual, avg_qual_trim)):
-        print("{:d}\t{:.2f}\t{:.2f}\t{:.2f}\t".format(i + 1, og, trim, trim - og))
+        print("{:d}\t{:.2f}\t{:.2f}\t{:.2f}\t".format(i + 1, og, trim,
+                                                      trim - og))
