@@ -7,7 +7,7 @@ usage: python3 {} GenBank_accession_numbers.txt
 """
 
 # Imports
-from sys import argv
+from sys import argv, exit
 from Bio import Entrez
 
 
@@ -66,6 +66,7 @@ def retrieve_gb_seqs(accession_list):
 if __name__ == '__main__':
     if not len(argv) == 2:
         print(__doc__.format(argv[0]))
+        exit(1)
 
     # Step 1, 2 & 3: Fetch seqs from the file given as argument; put in dict of
     #  dicts with info about org. name, sequence and sequence length per entry
