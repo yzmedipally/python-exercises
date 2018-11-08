@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse a GenBank formatted input file, output FASTA and tab-delim. stats files
+"""Parse a GenBank formatted input file, output FASTA and tab-delim. stats file
 
 Author: Hidde Bleeker
 931202071020
@@ -55,8 +55,8 @@ def write_sorted_fasta(seqs_sort, output_fn):
 
     :param seqs_sort: list, with tuples as (GB accession numbers,
     {org_name, seq, GC_percentage}); sorted on order of printing
-    :param output_fn: Name of the output file to print the sequences to, without
-     extension
+    :param output_fn: Name of the output file to print the sequences to,
+    without extension
     :return: None, it is a function that writes an output file
     """
     with open(output_fn + '.fasta', 'w') as out_f:
@@ -69,8 +69,8 @@ def write_sorted_stats(seqs_sort, output_fn):
 
     :param seqs_sort: list, with tuples as (GB accession numbers,
     {org_name, seq, GC_percentage}); sorted on order of printing
-    :param output_fn: Name of the output file to print the sequences to, without
-     extension
+    :param output_fn: Name of the output file to print the sequences to,
+    without extension
     :return: None, it is a function that writes an output file
     """
     with open(output_fn + '.csv', 'w') as out_f:
