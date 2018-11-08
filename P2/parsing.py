@@ -13,7 +13,8 @@ from operator import itemgetter
 
 
 def parse_gb_input(gb_filename):
-    """Parse a GenBank formatted file and return dictionary with info per record
+    """Parse a GenBank formatted file and return dictionary with info per
+    record
 
     :param gb_filename: str, input filename
     :return: generator, with elements as accession_nr, organism_name, sequence
@@ -45,7 +46,7 @@ def calc_gc_cont(dna_seq):
     :param dna_seq: str, DNA/RNA sequence
     :return: float, percentage of G+C in the sequence
     """
-    count = [1 if _s.upper() in 'GC' else 0 for _s in dna_seq]
+    count = [1 if _s in 'GC' else 0 for _s in dna_seq.upper()]
     return sum(count) / len(count) * 100
 
 
@@ -94,7 +95,9 @@ if __name__ == '__main__':
     else:
         # Create dictionary from parsed GB sequences and write FASTA/stats to
         # files.
-        sequences = [{'acc': acc, 'org_name': name, 'seq': seq, 'GC_content': calc_gc_cont(seq), 'length': len(seq)} for acc, name, seq in parse_gb_input(argv[1])]
+        sequences = [{'acc': acc, 'org_name': name, 'seq': seq,
+                      'GC_content': calc_gc_cont(seq), 'length': len(seq)}
+                     for acc, name, seq in parse_gb_input(argv[1])]
 
         sorted_sequences = sorted(sequences, key=itemgetter('GC_content'),
                                   reverse=True)
