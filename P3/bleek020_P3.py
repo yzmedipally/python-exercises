@@ -88,7 +88,7 @@ def run_fastq_trimmer(fastq_file, output_fn, scale=64, qual_threshold=30):
 
 
 if __name__ == "__main__":
-    if not argv == 2:
+    if not len(argv) == 2:
         print(__doc__.format(argv[0]))
         exit(1)
 
