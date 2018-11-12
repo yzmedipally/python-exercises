@@ -31,7 +31,8 @@ def parse_fasta(lines):
     yield label, "".join(seq)  # seq is already an iterator
 
 
-def run_needle(ref_seq_fn, rel_seq_fn, out_fn, gap_open=8, gap_ext=0.5):
+def run_needle(ref_seq_fn, rel_seq_fn, out_fn="out.needle", gap_open=8,
+               gap_ext=0.5):
     """Run EMBOSS needle on the command line with given given parameters
 
     :param ref_seq_fn: str, single sequence (reference) input filename
@@ -70,6 +71,7 @@ if __name__ == '__main__':
     # 3. In your python script, run the program needle to align the protein
     # sequences of related species (related.fasta) to the reference protein
     # from A. thaliana (ref.fasta).
+    run_needle(ref_fn, rel_fn)
 
     # 4. Write a function to calculate the hamming distance between two
     # sequences of equal length
