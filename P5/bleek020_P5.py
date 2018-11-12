@@ -10,6 +10,7 @@ usage: python3 {} reference.fa related.fa
 from sys import argv, exit
 from os.path import exists
 import subprocess as sbp
+import re
 
 
 def parse_fasta(lines):
@@ -85,6 +86,32 @@ def calc_perc_id(seq1, seq2):
     return (len(seq1) - calc_hamm_dist(seq1, seq2)) / len(seq1) * 100
 
 
+def parse_needle_entry(lines):
+
+    seq_pat = re.compile(r'(\S+)\s+\d+\s+(\S+)')
+    curr = {}
+    # reading = False
+    for line in lines:
+        if line.startswith("#=======================================") or \
+                line.startswith("#---------------------------------------"):
+            if curr:
+                yield [(_id, "".join(_seq)) for _id, _seq in curr.items()]
+                curr = {}
+                # reading = False
+        # if line.startswith("#=======================================") \
+        #         and not reading:
+        #     reading = True
+        else:
+            seq_data = seq_pat.search(line)
+            if seq_data:
+                if seq_data.group(1) not in curr:
+                    curr[seq_data.group(1)] = [seq_data.group(2), ]
+                else:
+                    curr[seq_data.group(1)].append(seq_data.group(2))
+    # yield [(_id, "".join(_seq)) for _id, _seq in curr.items()]
+
+
+
 if __name__ == '__main__':
     if not len(argv) == 3:
         print(__doc__.format(argv[0]))
@@ -113,4 +140,4 @@ if __name__ == '__main__':
 
     # 6. Parse the needle output to extract all pairwise alignments
 
-    # 7. Report a tab-delimited table with one line for each alignment,
+    # 7. Report a tab-delimited table with one line for each alignment
