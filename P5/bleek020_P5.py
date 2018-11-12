@@ -33,6 +33,17 @@ def parse_fasta(lines):
     yield label, "".join(seq)  # seq is already an iterator
 
 
+def find_id_from_str(id_str):
+    """Find the sequence identifier from a id string and return this
+
+    :param id_str: str, to find the id in
+    :return: str, id
+    """
+    id_found = re.search(r'(?:\S+\|\S+\|)?(\S+)', id_str)
+    if id_found:
+        return id_found.group(1)
+
+
 def run_needle(ref_seq_fn, rel_seq_fn, out_fn="out.needle", gap_open=8,
                gap_ext=0.5):
     """Run EMBOSS needle on the command line with given given parameters
@@ -53,7 +64,7 @@ def run_needle(ref_seq_fn, rel_seq_fn, out_fn="out.needle", gap_open=8,
               "-outfile {}".format(ref_seq_fn, rel_seq_fn, gap_open, gap_ext,
                                    out_fn)
         try:
-            e = sbp.check_call(cmd, shell=True)
+            sbp.check_call(cmd, shell=True)
         except sbp.CalledProcessError as e:
             print("Needle command failed to run. Error:\n{}".format(e))
 
@@ -87,20 +98,21 @@ def calc_perc_id(seq1, seq2):
 
 
 def parse_needle_entry(lines):
+    """Parse a single needle entry, consisting of two aligned sequences
 
+    :param lines: iterator, of lines (e.g. open file)
+    :return: aligned needle entry (list of two aligned sequences, which is a
+    tuple of (id, sequence)).
+    """
     seq_pat = re.compile(r'(\S+)\s+\d+\s+(\S+)')
     curr = {}
-    # reading = False
     for line in lines:
-        if line.startswith("#=======================================") or \
-                line.startswith("#---------------------------------------"):
-            if curr:
-                yield [(_id, "".join(_seq)) for _id, _seq in curr.items()]
-                curr = {}
-                # reading = False
-        # if line.startswith("#=======================================") \
-        #         and not reading:
-        #     reading = True
+        if line.startswith("#"):
+            if line.startswith("#======================================") or \
+                    line.startswith("#--------------------------------------"):
+                if curr:
+                    yield [(_id, "".join(_seq)) for _id, _seq in curr.items()]
+                    curr = {}
         else:
             seq_data = seq_pat.search(line)
             if seq_data:
@@ -108,8 +120,6 @@ def parse_needle_entry(lines):
                     curr[seq_data.group(1)] = [seq_data.group(2), ]
                 else:
                     curr[seq_data.group(1)].append(seq_data.group(2))
-    # yield [(_id, "".join(_seq)) for _id, _seq in curr.items()]
-
 
 
 if __name__ == '__main__':
@@ -119,25 +129,38 @@ if __name__ == '__main__':
 
     # Step 1: Read filenames specified on the command line (using argv)
     ref_fn, rel_fn = argv[1:]
-    # ref_fn, rel_fn = "ref.fasta", "related.fasta"
+    needle_out_file = "out.needle"
 
-    # 2. Parse FASTA files with multiple protein sequences and determine the
+    # 2. Parse FASTA files with (multiple) protein sequences and determine the
     # lengths of the sequences
     with open(rel_fn) as rel_f:
         rel_seqs = {_id: (_seq, len(_seq)) for _id, _seq in parse_fasta(rel_f)}
-    for k, v in rel_seqs.items():
-        print("{}:\t{}\t{}".format(k, v[1], v[0]))
+    with open(ref_fn) as ref_f:
+        ref_id, ref_seq = next(parse_fasta(ref_f))
+    rel_seqs[ref_id] = (ref_seq, len(ref_seq))
+    rel_seqs = {find_id_from_str(_id): _val for _id, _val in rel_seqs.items()}
 
     # 3. In your python script, run the program needle to align the protein
     # sequences of related species (related.fasta) to the reference protein
     # from A. thaliana (ref.fasta).
-    run_needle(ref_fn, rel_fn)
+    run_needle(ref_fn, rel_fn, out_fn=needle_out_file)
 
     # 4. Write a function to calculate the hamming distance between two
     # sequences of equal length
     # 5. Write a function to calculate the percent of identity between two
     # aligned sequences
-
     # 6. Parse the needle output to extract all pairwise alignments
-
     # 7. Report a tab-delimited table with one line for each alignment
+    print("Sequence1\tLength\tSequence2\tLength\tHamm\tIdent")
+    with open(needle_out_file) as alignments:
+        for s1, s2 in parse_needle_entry(alignments):
+            output = {"seq1": s1[0],
+                      "len1": rel_seqs[s1[0]][1],
+                      "seq2": s2[0],
+                      "len2": rel_seqs[s2[0]][1],
+                      "hamm": calc_hamm_dist(s1[1], s2[1]),
+                      "ident": calc_perc_id(s1[1], s2[1]),
+                      }
+
+            print("{seq1}\t{len1:d}\t{seq2}\t{len2:d}\t{hamm:d}\t{ident:.2f}"
+                  .format(**output))
