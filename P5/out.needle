@@ -1,0 +1,321 @@
+########################################
+# Program: needle
+# Rundate: Mon 12 Nov 2018 10:02:33
+# Commandline: needle
+#    -asequence ref.fasta
+#    -bsequence related.fasta
+#    -gapopen 8
+#    -gapextend 0.5
+#    -outfile out.needle
+# Align_format: srspair
+# Report_file: out.needle
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: GPA1_ARATH
+# 2: GPA1_PEA
+# Matrix: EBLOSUM62
+# Gap_penalty: 8.0
+# Extend_penalty: 0.5
+#
+# Length: 384
+# Identity:     329/384 (85.7%)
+# Similarity:   357/384 (93.0%)
+# Gaps:           1/384 ( 0.3%)
+# Score: 1728.0
+# 
+#
+#=======================================
+
+GPA1_ARATH         1 MGLLCSRS-RHHTEDTDENTQAAEIERRIEQEAKAEKHIRKLLLLGAGES     49
+                     ||||||:| |::....:||.|.||||||||.|.|||||||||||||||||
+GPA1_PEA           1 MGLLCSKSNRYNDAKAEENAQTAEIERRIELETKAEKHIRKLLLLGAGES     50
+
+GPA1_ARATH        50 GKSTIFKQIKLLFQTGFDEGELKSYVPVIHANVYQTIKLLHDGTKEFAQN     99
+                     |||||||||||||||||||.|||||:||:||||||||||||||:||||||
+GPA1_PEA          51 GKSTIFKQIKLLFQTGFDEAELKSYLPVVHANVYQTIKLLHDGSKEFAQN    100
+
+GPA1_ARATH       100 ETDSAKYMLSSESIAIGEKLSEIGGRLDYPRLTKDIAEGIETLWKDPAIQ    149
+                     :.|.:||::|:|:..|||||||||||||||||||::|:.||::|||.|||
+GPA1_PEA         101 DVDFSKYVISTENKDIGEKLSEIGGRLDYPRLTKELAQEIESIWKDAAIQ    150
+
+GPA1_ARATH       150 ETCARGNELQVPDCTKYLMENLKRLSDINYIPTKEDVLYARVRTTGVVEI    199
+                     ||.||||||||||||.|.||||:||||.||:|||||||.|||||||||||
+GPA1_PEA         151 ETYARGNELQVPDCTHYFMENLQRLSDANYVPTKEDVLLARVRTTGVVEI    200
+
+GPA1_ARATH       200 QFSPVGENKKSGEVYRLFDVGGQRNERRKWIHLFEGVTAVIFCAAISEYD    249
+                     |||||||||||||||||||||||||||||||||||||:|||||.||||||
+GPA1_PEA         201 QFSPVGENKKSGEVYRLFDVGGQRNERRKWIHLFEGVSAVIFCVAISEYD    250
+
+GPA1_ARATH       250 QTLFEDEQKNRMMETKELFDWVLKQPCFEKTSFMLFLNKFDIFEKKVLDV    299
+                     |||||||.|||||||||||:|||||.||||||||||||||||||||:|||
+GPA1_PEA         251 QTLFEDENKNRMMETKELFEWVLKQQCFEKTSFMLFLNKFDIFEKKILDV    300
+
+GPA1_ARATH       300 PLNVCEWFRDYQPVSSGKQEIEHAYEFVKKKFEELYYQNTAPDRVDRVFK    349
+                     ||||||||:||||||:||||||||||||||||||.|:|:||||.||||||
+GPA1_PEA         301 PLNVCEWFKDYQPVSTGKQEIEHAYEFVKKKFEESYFQSTAPDSVDRVFK    350
+
+GPA1_ARATH       350 IYRTTALDQKLVKKTFKLVDETLRRRNLLEAGLL    383
+                     ||||||||||:|||||||||||||||||.|||||
+GPA1_PEA         351 IYRTTALDQKVVKKTFKLVDETLRRRNLFEAGLL    384
+
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: GPA1_ARATH
+# 2: GPA1_SOYBN
+# Matrix: EBLOSUM62
+# Gap_penalty: 8.0
+# Extend_penalty: 0.5
+#
+# Length: 385
+# Identity:     317/385 (82.3%)
+# Similarity:   351/385 (91.2%)
+# Gaps:           2/385 ( 0.5%)
+# Score: 1650.0
+# 
+#
+#=======================================
+
+GPA1_ARATH         1 MGLLCSRSRHHTE-DTDENTQAAEIERRIEQEAKAEKHIRKLLLLGAGES     49
+                     |||:|||||...| ..:||.|.||||||||.|.||||||:||||||||||
+GPA1_SOYBN         1 MGLVCSRSRRFREAHAEENAQDAEIERRIELETKAEKHIQKLLLLGAGES     50
+
+GPA1_ARATH        50 GKSTIFKQIKLLFQTGFDEGELKSYVPVIHANVYQTIKLLHDGTKEFAQN     99
+                     |:|||||||||||||||:|.|||||:||:|||||||||:|.||:||.|||
+GPA1_SOYBN        51 GRSTIFKQIKLLFQTGFNEAELKSYIPVVHANVYQTIKVLQDGSKELAQN    100
+
+GPA1_ARATH       100 ETDSAKYMLSSESIAIGEKLSEIGGRLDYPRLTKDIAEGIETLWKDPAIQ    149
+                     :.||:||::|:|:..||:|||||||.|.||||||::|:.|||:|:|.|||
+GPA1_SOYBN       101 DFDSSKYVISNENQDIGQKLSEIGGTLVYPRLTKELAQEIETMWEDAAIQ    150
+
+GPA1_ARATH       150 ETCARGNELQVPDCTKYLMENLKRLSDINYIPTKEDVLYARVRTTGVVEI    199
+                     ||.|||||||||||..|.||||:||||.||:|||||.|||||||||||||
+GPA1_SOYBN       151 ETYARGNELQVPDCAHYFMENLERLSDANYVPTKEDFLYARVRTTGVVEI    200
+
+GPA1_ARATH       200 QFSPVGENKKSGEVYRLFDVGGQRNERRKWIHLFEGVTAVIFCAAISEYD    249
+                     |||||||||:|||||||||||||||||||||||||||||||||:||||||
+GPA1_SOYBN       201 QFSPVGENKRSGEVYRLFDVGGQRNERRKWIHLFEGVTAVIFCSAISEYD    250
+
+GPA1_ARATH       250 QTLFEDEQKNRMMETKELFDWVLKQPCFEKTSFMLFLNKFDIFEKKVLDV    299
+                     |||:|||.|||||||||||:|||:||||||||||||||||||||||||:|
+GPA1_SOYBN       251 QTLYEDENKNRMMETKELFEWVLRQPCFEKTSFMLFLNKFDIFEKKVLNV    300
+
+GPA1_ARATH       300 PLNVCEWFR-DYQPVSSGKQEIEHAYEFVKKKFEELYYQNTAPDRVDRVF    348
+                     ||||||||: ||||||:.|||||||||||||||||||:|:||||.|||||
+GPA1_SOYBN       301 PLNVCEWFKHDYQPVSTEKQEIEHAYEFVKKKFEELYFQSTAPDCVDRVF    350
+
+GPA1_ARATH       349 KIYRTTALDQKLVKKTFKLVDETLRRRNLLEAGLL    383
+                     |||:.||.|||||||||||.||||||||.||||||
+GPA1_SOYBN       351 KIYQATAPDQKLVKKTFKLGDETLRRRNPLEAGLL    385
+
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: GPA1_ARATH
+# 2: GPA1_LUPLU
+# Matrix: EBLOSUM62
+# Gap_penalty: 8.0
+# Extend_penalty: 0.5
+#
+# Length: 384
+# Identity:     323/384 (84.1%)
+# Similarity:   356/384 (92.7%)
+# Gaps:           1/384 ( 0.3%)
+# Score: 1709.0
+# 
+#
+#=======================================
+
+GPA1_ARATH         1 MGLLCSRSRHHTE-DTDENTQAAEIERRIEQEAKAEKHIRKLLLLGAGES     49
+                     |||||||:|.:.: |.:||.||||||||||.|.||||||:||||||||||
+GPA1_LUPLU         1 MGLLCSRNRRYNDADAEENAQAAEIERRIELETKAEKHIQKLLLLGAGES     50
+
+GPA1_ARATH        50 GKSTIFKQIKLLFQTGFDEGELKSYVPVIHANVYQTIKLLHDGTKEFAQN     99
+                     |||||||||||||||||||.|||||:|||||||:|||||||||:||.|||
+GPA1_LUPLU        51 GKSTIFKQIKLLFQTGFDEAELKSYLPVIHANVFQTIKLLHDGSKELAQN    100
+
+GPA1_ARATH       100 ETDSAKYMLSSESIAIGEKLSEIGGRLDYPRLTKDIAEGIETLWKDPAIQ    149
+                     :.||:||::|.|:..|||||||||.:||||.||.::|:.|||||:|.|||
+GPA1_LUPLU       101 DVDSSKYVISDENKDIGEKLSEIGSKLDYPYLTTELAKEIETLWEDAAIQ    150
+
+GPA1_ARATH       150 ETCARGNELQVPDCTKYLMENLKRLSDINYIPTKEDVLYARVRTTGVVEI    199
+                     ||.|||||||||.|..|.||||:||||.||:|||||||||||||||||||
+GPA1_LUPLU       151 ETYARGNELQVPGCAHYFMENLQRLSDANYVPTKEDVLYARVRTTGVVEI    200
+
+GPA1_ARATH       200 QFSPVGENKKSGEVYRLFDVGGQRNERRKWIHLFEGVTAVIFCAAISEYD    249
+                     |||||||||:|||||||||||||||||||||||||||:||||||||||||
+GPA1_LUPLU       201 QFSPVGENKRSGEVYRLFDVGGQRNERRKWIHLFEGVSAVIFCAAISEYD    250
+
+GPA1_ARATH       250 QTLFEDEQKNRMMETKELFDWVLKQPCFEKTSFMLFLNKFDIFEKKVLDV    299
+                     |||||||.||||.||||||:|:||||||||||||||||||||||||:|.|
+GPA1_LUPLU       251 QTLFEDENKNRMTETKELFEWILKQPCFEKTSFMLFLNKFDIFEKKILKV    300
+
+GPA1_ARATH       300 PLNVCEWFRDYQPVSSGKQEIEHAYEFVKKKFEELYYQNTAPDRVDRVFK    349
+                     ||||||||:||||||:||||||||||||||||||||:|:|||:|||||||
+GPA1_LUPLU       301 PLNVCEWFKDYQPVSTGKQEIEHAYEFVKKKFEELYFQSTAPERVDRVFK    350
+
+GPA1_ARATH       350 IYRTTALDQKLVKKTFKLVDETLRRRNLLEAGLL    383
+                     :||||||||||:|||||||||:||||||.|||||
+GPA1_LUPLU       351 VYRTTALDQKLIKKTFKLVDESLRRRNLFEAGLL    384
+
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: GPA1_ARATH
+# 2: GPA1_LOTJA
+# Matrix: EBLOSUM62
+# Gap_penalty: 8.0
+# Extend_penalty: 0.5
+#
+# Length: 384
+# Identity:     333/384 (86.7%)
+# Similarity:   355/384 (92.4%)
+# Gaps:           1/384 ( 0.3%)
+# Score: 1739.0
+# 
+#
+#=======================================
+
+GPA1_ARATH         1 MGLLCSRSRHHTE-DTDENTQAAEIERRIEQEAKAEKHIRKLLLLGAGES     49
+                     ||||||::|.:.: ||:||||.||||||||.|.||||||:||||||||||
+GPA1_LOTJA         1 MGLLCSKNRRYNDADTEENTQTAEIERRIELETKAEKHIQKLLLLGAGES     50
+
+GPA1_ARATH        50 GKSTIFKQIKLLFQTGFDEGELKSYVPVIHANVYQTIKLLHDGTKEFAQN     99
+                     |||||||||||||||||||.|||||.|||||||||||||||||.||.|||
+GPA1_LOTJA        51 GKSTIFKQIKLLFQTGFDEAELKSYQPVIHANVYQTIKLLHDGAKELAQN    100
+
+GPA1_ARATH       100 ETDSAKYMLSSESIAIGEKLSEIGGRLDYPRLTKDIAEGIETLWKDPAIQ    149
+                     :.|.:||::|.|:..|||||||||||||||.|||::|..||.||||.|||
+GPA1_LOTJA       101 DVDFSKYVISDENKEIGEKLSEIGGRLDYPCLTKELALEIENLWKDAAIQ    150
+
+GPA1_ARATH       150 ETCARGNELQVPDCTKYLMENLKRLSDINYIPTKEDVLYARVRTTGVVEI    199
+                     ||.||||||||||||.|.||||.||||.||:|||:|||||||||||||||
+GPA1_LOTJA       151 ETYARGNELQVPDCTHYFMENLHRLSDANYVPTKDDVLYARVRTTGVVEI    200
+
+GPA1_ARATH       200 QFSPVGENKKSGEVYRLFDVGGQRNERRKWIHLFEGVTAVIFCAAISEYD    249
+                     |||||||||||||||||||||||||||||||||||||:||||||||||||
+GPA1_LOTJA       201 QFSPVGENKKSGEVYRLFDVGGQRNERRKWIHLFEGVSAVIFCAAISEYD    250
+
+GPA1_ARATH       250 QTLFEDEQKNRMMETKELFDWVLKQPCFEKTSFMLFLNKFDIFEKKVLDV    299
+                     |||||||.|||||||||||:||||||||||||||||||||||||||:|.|
+GPA1_LOTJA       251 QTLFEDENKNRMMETKELFEWVLKQPCFEKTSFMLFLNKFDIFEKKILKV    300
+
+GPA1_ARATH       300 PLNVCEWFRDYQPVSSGKQEIEHAYEFVKKKFEELYYQNTAPDRVDRVFK    349
+                     ||||||||:||||||:||||||||||||||||||.|:|||||||||||||
+GPA1_LOTJA       301 PLNVCEWFKDYQPVSTGKQEIEHAYEFVKKKFEESYFQNTAPDRVDRVFK    350
+
+GPA1_ARATH       350 IYRTTALDQKLVKKTFKLVDETLRRRNLLEAGLL    383
+                     ||||||||||:|||||||||||||||||.|||||
+GPA1_LOTJA       351 IYRTTALDQKVVKKTFKLVDETLRRRNLFEAGLL    384
+
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: GPA1_ARATH
+# 2: GPA1_ORYSJ
+# Matrix: EBLOSUM62
+# Gap_penalty: 8.0
+# Extend_penalty: 0.5
+#
+# Length: 384
+# Identity:     284/384 (74.0%)
+# Similarity:   331/384 (86.2%)
+# Gaps:           5/384 ( 1.3%)
+# Score: 1506.0
+# 
+#
+#=======================================
+
+GPA1_ARATH         1 MGLLCSRSRHHTE-DTDENTQAAEIERRIEQEAKAEKHIRKLLLLGAGES     49
+                     ||..||||...:| :|.:|.::|:|:|||.||.|||:||.||||||||||
+GPA1_ORYSJ         1 MGSSCSRSHSLSEAETTKNAKSADIDRRILQETKAEQHIHKLLLLGAGES     50
+
+GPA1_ARATH        50 GKSTIFKQIKLLFQTGFDEGELKSYVPVIHANVYQTIKLLHDGTKEFAQN     99
+                     |||||||||||||||||||.||:||..|||||||||||:|::|.||.:|.
+GPA1_ORYSJ        51 GKSTIFKQIKLLFQTGFDEAELRSYTSVIHANVYQTIKILYEGAKELSQV    100
+
+GPA1_ARATH       100 ETDSAKYMLSSESIAIGEKLSEIGGRLDYPRLTKDIAEGIETLWKDPAIQ    149
+                     |:||:||::|.::..||||||:|.||||||.|.|::...::.||:|||||
+GPA1_ORYSJ       101 ESDSSKYVISPDNQEIGEKLSDIDGRLDYPLLNKELVLDVKRLWQDPAIQ    150
+
+GPA1_ARATH       150 ETCARGNELQVPDCTKYLMENLKRLSDINYIPTKEDVLYARVRTTGVVEI    199
+                     ||..||:.||:|||.:|.||||.||::..|:|||||||||||||.|||:|
+GPA1_ORYSJ       151 ETYLRGSILQLPDCAQYFMENLDRLAEAGYVPTKEDVLYARVRTNGVVQI    200
+
+GPA1_ARATH       200 QFSPVGENKKSGEVYRLFDVGGQRNERRKWIHLFEGVTAVIFCAAISEYD    249
+                     |||||||||:.||||||:|||||||||||||||||||.||||||||||||
+GPA1_ORYSJ       201 QFSPVGENKRGGEVYRLYDVGGQRNERRKWIHLFEGVNAVIFCAAISEYD    250
+
+GPA1_ARATH       250 QTLFEDEQKNRMMETKELFDWVLKQPCFEKTSFMLFLNKFDIFEKKVLDV    299
+                     |.|||||.|||||||||||||||||.|||||||:||||||||||||:..|
+GPA1_ORYSJ       251 QMLFEDETKNRMMETKELFDWVLKQRCFEKTSFILFLNKFDIFEKKIQKV    300
+
+GPA1_ARATH       300 PLNVCEWFRDYQPVSSGKQEIEHAYEFVKKKFEELYYQNTAPDRVDRVFK    349
+                     ||:|||||:||||::.||||:|||||||||||||||:|::.|||||||||
+GPA1_ORYSJ       301 PLSVCEWFKDYQPIAPGKQEVEHAYEFVKKKFEELYFQSSKPDRVDRVFK    350
+
+GPA1_ARATH       350 IYRTTALDQKLVKKTFKLVDETLRRRNLLEAGLL    383
+                     ||||||||||||||||||:||::||.   ..|. 
+GPA1_ORYSJ       351 IYRTTALDQKLVKKTFKLIDESMRRS---REGT-    380
+
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: GPA1_ARATH
+# 2: GPA1_SOLLC
+# Matrix: EBLOSUM62
+# Gap_penalty: 8.0
+# Extend_penalty: 0.5
+#
+# Length: 384
+# Identity:     325/384 (84.6%)
+# Similarity:   356/384 (92.7%)
+# Gaps:           1/384 ( 0.3%)
+# Score: 1720.0
+# 
+#
+#=======================================
+
+GPA1_ARATH         1 MGLLCSRSRHHTE-DTDENTQAAEIERRIEQEAKAEKHIRKLLLLGAGES     49
+                     ||.||||::|::: |.:||||.||||||||||.||||||:||||||||:|
+GPA1_SOLLC         1 MGSLCSRNKHYSQADDEENTQTAEIERRIEQETKAEKHIQKLLLLGAGDS     50
+
+GPA1_ARATH        50 GKSTIFKQIKLLFQTGFDEGELKSYVPVIHANVYQTIKLLHDGTKEFAQN     99
+                     |||||||||||||||||||.|||:|:||||||||||.|:||||:||.|||
+GPA1_SOLLC        51 GKSTIFKQIKLLFQTGFDEEELKNYIPVIHANVYQTTKILHDGSKELAQN    100
+
+GPA1_ARATH       100 ETDSAKYMLSSESIAIGEKLSEIGGRLDYPRLTKDIAEGIETLWKDPAIQ    149
+                     |.:::||:||:|:..|||||||||||||||.||||:.:.||.||||||||
+GPA1_SOLLC       101 ELEASKYLLSAENKEIGEKLSEIGGRLDYPHLTKDLVQDIEALWKDPAIQ    150
+
+GPA1_ARATH       150 ETCARGNELQVPDCTKYLMENLKRLSDINYIPTKEDVLYARVRTTGVVEI    199
+                     ||..||||||||||..|.||||:|.||::|||||||||:||:||||||||
+GPA1_SOLLC       151 ETLLRGNELQVPDCAHYFMENLERFSDVHYIPTKEDVLFARIRTTGVVEI    200
+
+GPA1_ARATH       200 QFSPVGENKKSGEVYRLFDVGGQRNERRKWIHLFEGVTAVIFCAAISEYD    249
+                     ||||||||||||||||||||||||||||||||||||||||||||||||||
+GPA1_SOLLC       201 QFSPVGENKKSGEVYRLFDVGGQRNERRKWIHLFEGVTAVIFCAAISEYD    250
+
+GPA1_ARATH       250 QTLFEDEQKNRMMETKELFDWVLKQPCFEKTSFMLFLNKFDIFEKKVLDV    299
+                     |||||||:|||||||||||:||||||||||||||||||||||||:||..|
+GPA1_SOLLC       251 QTLFEDERKNRMMETKELFEWVLKQPCFEKTSFMLFLNKFDIFEQKVPKV    300
+
+GPA1_ARATH       300 PLNVCEWFRDYQPVSSGKQEIEHAYEFVKKKFEELYYQNTAPDRVDRVFK    349
+                     |||.||||:|||.||:||||||||||||||||||.|:|.|||||||||||
+GPA1_SOLLC       301 PLNACEWFKDYQSVSTGKQEIEHAYEFVKKKFEESYFQCTAPDRVDRVFK    350
+
+GPA1_ARATH       350 IYRTTALDQKLVKKTFKLVDETLRRRNLLEAGLL    383
+                     ||||||||||||||||||||||||||||.|||||
+GPA1_SOLLC       351 IYRTTALDQKLVKKTFKLVDETLRRRNLFEAGLL    384
+
+
+#---------------------------------------
+#---------------------------------------
