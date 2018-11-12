@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+"""Read and align sequences to reference sequence. Report alignment stats
 
 Author: Hidde Bleeker (931202071020)
 
