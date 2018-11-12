@@ -9,6 +9,7 @@ usage: python3 {} reference.fa related.fa
 # Imports
 from sys import argv, exit
 from os.path import exists
+import subprocess as sbp
 
 
 def parse_fasta(lines):
@@ -50,6 +51,38 @@ def run_needle(ref_seq_fn, rel_seq_fn, out_fn="out.needle", gap_open=8,
         cmd = "needle -asequence {} -bsequence {} -gapopen {} -gapextend {} " \
               "-outfile {}".format(ref_seq_fn, rel_seq_fn, gap_open, gap_ext,
                                    out_fn)
+        try:
+            e = sbp.check_call(cmd, shell=True)
+        except sbp.CalledProcessError as e:
+            print("Needle command failed to run. Error:\n{}".format(e))
+
+
+def calc_hamm_dist(seq1, seq2):
+    """Calculate Hamming distance between two sequences of equal length
+
+    :param seq1: str, sequence of same length as seq2
+    :param seq2: str, sequence of same length as seq1
+    :return: integer or None, Hamming distance (number of positions at which
+    the symbols are different)(None if seqs not of same length)
+    """
+    if len(seq1) != len(seq2):
+        print("Sequences not of same length. Returning without answer.")
+        return
+    return sum([0 if seq1[i] == seq2[i] else 1 for i in range(len(seq1))])
+
+
+def calc_perc_id(seq1, seq2):
+    """Calculate percentage identity between two aligned sequences
+
+    :param seq1: str, sequence of same length as seq2
+    :param seq2: str, sequence of same length as seq1
+    :return: float or None, percentage identity (no_identical_pos /
+    alignment_length * 100) (None if seqs not of same length)
+    """
+    if len(seq1) != len(seq2):
+        print("Sequences not of same length. Returning without answer.")
+        return
+    return (len(seq1) - calc_hamm_dist(seq1, seq2)) / len(seq1) * 100
 
 
 if __name__ == '__main__':
@@ -75,9 +108,9 @@ if __name__ == '__main__':
 
     # 4. Write a function to calculate the hamming distance between two
     # sequences of equal length
-
     # 5. Write a function to calculate the percent of identity between two
     # aligned sequences
 
     # 6. Parse the needle output to extract all pairwise alignments
+
     # 7. Report a tab-delimited table with one line for each alignment,
