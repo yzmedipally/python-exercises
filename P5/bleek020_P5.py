@@ -80,7 +80,7 @@ def calc_hamm_dist(seq1, seq2):
     if len(seq1) != len(seq2):
         print("Sequences not of same length. Returning without answer.")
         return
-    return sum([0 if seq1[i] == seq2[i] else 1 for i in range(len(seq1))])
+    return sum(seq1[i] == seq2[i] for i in range(len(seq1)))
 
 
 def calc_perc_id(seq1, seq2):
