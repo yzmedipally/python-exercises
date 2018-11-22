@@ -6,8 +6,11 @@ Author: Hidde Bleeker (931202071020)
 
 # Imports
 import argparse
+import subprocess as sbp
 from sys import argv
 from operator import itemgetter
+from os.path import exists
+
 
 
 def parse_arguments():
@@ -80,6 +83,30 @@ def find_size_and_n50(seq_dict):
         current_size += _seq[1]
         if current_size >= size_50:
             return size, _seq[1], i + 1
+
+
+def run_lastz(reference_ip, query_ip, output_format='general',
+              output_fn='outlastz.txt'):
+    """Run LASTZ, sequence alignment program to compare assembly to reference
+
+    :param str reference_ip: Filename of the reference sequence (FASTA format)
+    :param str query_ip: Filename of the query sequence (FASTA format)
+    :param str output_format: format type for the lastz utility
+    :param str output_fn: Filename to write output to.
+    :return:
+    """
+    if exists(output_fn):
+        print("Output file already exists; lastz not run.")
+        return
+    cmd = "lastz {} {} --format={} --output={}"\
+        .format(reference_ip, query_ip, output_format, output_fn)
+
+    print("Running LASTZ, command used:\n{}".format(cmd))
+    try:
+        sbp.check_call(cmd)
+    except sbp.CalledProcessError as err:
+        print("LASTZ failed to run. Error:\n{}\nQuitting.".format(err))
+    # implicit return
 
 
 
