@@ -103,7 +103,7 @@ def run_lastz(reference_ip, query_ip, output_format='general',
 
     print("Running LASTZ, command used:\n{}".format(cmd))
     try:
-        sbp.check_call(cmd)
+        sbp.check_call(cmd, shell=True)
     except sbp.CalledProcessError as err:
         print("LASTZ failed to run. Error:\n{}\nQuitting.".format(err))
     # implicit return
