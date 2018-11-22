@@ -126,6 +126,11 @@ if __name__ == '__main__':
     print(find_size_and_n50(ASSEMBLY_DICT))
     print(find_size_and_n50(REFERENCE_DICT))
 
+    run_lastz(args['reference'], args['assembled'])
+
+
+
+
     # for _val in ASSEMBLY_DICT.values():
     #     print(_val[1])
     # print("\n\n")
