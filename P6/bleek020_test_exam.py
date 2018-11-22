@@ -26,11 +26,11 @@ def parse_arguments():
                         else parser.error("Wrong input file extension."),
                         help="Input reference genome as FASTA file, with "
                              ".fasta or .fa extension.")
-    parser.add_argument('assembled', type=lambda inp: inp
+    parser.add_argument('query', type=lambda inp: inp
                         if any(inp.lower().endswith(tail) for tail in
                                ['.fa', '.fasta'])
                         else parser.error("Wrong input file extension."),
-                        help="Input assembled genome to compare to reference "
+                        help="Input query genome to compare to reference "
                              "as FASTA file, with .fasta or .fa extension.")
     if len(argv) <= 1:
         parser.print_help()
@@ -109,14 +109,20 @@ def run_lastz(reference_ip, query_ip, output_format='general',
     # implicit return
 
 
+def parse_lastz_output(list_of_lines):
 
 
 
 if __name__ == '__main__':
+    # # In the case that argparse is not allowed:
+    # if not len(argv) == 3:
+    #     print("usage: python3 {} reference.fa query.fa".format(argv[0]))
+    # # In this case every args[key] has thus to be replaced with argv[1] or
+    # # argv[2].
 
     args = parse_arguments()
     # print(type(args), args)
-    with open(args['assembled']) as inp_f:
+    with open(args['query']) as inp_f:
         ASSEMBLY_DICT = {_id: (_seq, len(_seq)) for _id, _seq in
                          parse_fasta(inp_f)}
     with open(args['reference']) as inp_f:
@@ -126,7 +132,8 @@ if __name__ == '__main__':
     print(find_size_and_n50(ASSEMBLY_DICT))
     print(find_size_and_n50(REFERENCE_DICT))
 
-    run_lastz(args['reference'], args['assembled'])
+    run_lastz(args['reference'], args['query'])
+
 
 
 
