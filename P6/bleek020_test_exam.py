@@ -69,7 +69,7 @@ def find_size_and_n50(seq_dict):
     size = sum(_v[1] for _v in seq_dict.values())
     # print(size)
     sorted_seqs = sorted([_val for _val in seq_dict.values()],
-                         key=itemgetter(1))
+                         key=itemgetter(1), reverse=True)
     #
     # print(list(zip(*sorted_seqs))[1])
     # print(list(zip(*sorted_seqs))[1][45])
@@ -153,6 +153,8 @@ def find_uncovered(seq_len, covered_coords):
             if curr:
                 yield tuple(curr)
             curr = []
+    if curr:
+        yield tuple(curr)
 
 
 if __name__ == '__main__':
