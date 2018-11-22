@@ -95,16 +95,17 @@ def run_lastz(reference_ip, query_ip, output_format='general',
     :return: None, command calling function
     """
     if exists(output_fn):
-        print("Output file already exists; lastz not run.")
+        print("## Output file already exists; lastz not run.")
         return
     cmd = "lastz {} {} --format={} --output={}"\
         .format(reference_ip, query_ip, output_format, output_fn)
 
-    # print("Running LASTZ, command used:\n{}".format(cmd))
+    print("## Running LASTZ, command used:\n## {}".format(cmd))
     try:
         sbp.check_call(cmd, shell=True)
     except sbp.CalledProcessError as err:
-        print("LASTZ failed to run. Error:\n{}\nQuitting.".format(err))
+        print("## LASTZ failed to run. Error:\n## {}\n## Quitting."
+              .format(err))
     # implicit return
 
 
@@ -189,7 +190,7 @@ if __name__ == '__main__':
     GENOME_SEQ = next(iter(REFERENCE_DICT.values()))[0]
     count_total = [0, 0]
     for e in UNALIGNED_POSITION:
-        print("{}:{} {:s}".format(e[0], e[1], GENOME_SEQ[e[0]:e[1]][:30]))
+        print("{}:{} {:s}".format(e[0], e[1], GENOME_SEQ[e[0]:e[1]]))
         count_total[0] += 1
         count_total[1] += (e[1] - e[0])
     print("Number of uncovered regions: {}\nNumber of uncovered bases: {}"
