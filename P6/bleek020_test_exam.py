@@ -161,21 +161,21 @@ if __name__ == '__main__':
     # # In the case that argparse is not allowed:
     # if not len(argv) == 3:
     #     print("usage: python3 {} reference.fa query.fa".format(argv[0]))
-    # # In this case every args[key] has thus to be replaced with argv[1] or
+    # # In this case every ARGS[key] has thus to be replaced with argv[1] or
     # # argv[2].
 
     # Parse arguments and read in (parse) FASTA files
-    args = parse_arguments()
-    # print(type(args), args)
-    with open(args['query']) as inp_f:
+    ARGS = parse_arguments()
+    # print(type(ARGS), ARGS)
+    with open(ARGS['query']) as inp_f:
         QUERY_DICT = {_id: (_seq, len(_seq)) for _id, _seq in
                       parse_fasta(inp_f)}
-    with open(args['reference']) as inp_f:
+    with open(ARGS['reference']) as inp_f:
         REFERENCE_DICT = {_id: (_seq, len(_seq)) for _id, _seq in
                           parse_fasta(inp_f)}
 
     # Run LASTZ for sequence alignment
-    run_lastz(args['reference'], args['query'], output_fn="outlastz.txt")
+    run_lastz(ARGS['reference'], ARGS['query'], output_fn="outlastz.txt")
 
     # Find unaligned positions from LASTZ output file.
     with open("outlastz.txt") as lastz_f:
@@ -185,18 +185,18 @@ if __name__ == '__main__':
 
     # Print the genome stats and the uncovered regions
     print("{}: TOTAL={}; N50 SIZE={}; N50 INDEX={}"
-          .format(args['query'], *find_size_and_n50(QUERY_DICT)))
+          .format(ARGS['query'], *find_size_and_n50(QUERY_DICT)))
     print("{}: TOTAL={}; N50 SIZE={}; N50 INDEX={}"
-          .format(args['reference'], *find_size_and_n50(REFERENCE_DICT)))
+          .format(ARGS['reference'], *find_size_and_n50(REFERENCE_DICT)))
     print("Uncovered regions:")
     GENOME_SEQ = next(iter(REFERENCE_DICT.values()))[0]
-    count_total = [0, 0]
+    COUNT_TOTAL = [0, 0]
     for e in UNALIGNED_POSITION:
         print("{}:{} {:s}".format(e[0], e[1], GENOME_SEQ[e[0]:e[1]]))
-        count_total[0] += 1
-        count_total[1] += (e[1] - e[0])
+        COUNT_TOTAL[0] += 1
+        COUNT_TOTAL[1] += (e[1] - e[0])
     print("Number of uncovered regions: {}\nNumber of uncovered bases: {}"
-          .format(*count_total))
+          .format(*COUNT_TOTAL))
 
     # Testing purposes...
     # for _val in QUERY_DICT.values():
