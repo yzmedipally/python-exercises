@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Script to
+"""Run augustus and print stats of the predicted proteins and their stop codon
 
 Author: Hidde Bleeker (931202071020)
 """
@@ -23,8 +23,8 @@ def parse_arguments():
                         if any(inp.lower().endswith(tail) for tail in
                                ['.fa', '.fasta'])
                         else parser.error("Wrong input file extension."),
-                        help="Input genome assembly FASTA file, with .fasta or"
-                             " .fa file extension.")
+                        help="Input genome assembly FASTA file, with .fasta "
+                             "or .fa file extension.")
     parser.add_argument('-o', '--augustus_out', default='aug.gff',
                         type=lambda inp: inp if inp.lower().endswith('.gff')
                         else parser.error("Wrong input file extension."),
@@ -87,7 +87,7 @@ def run_augustus(in_fn, genemodel='complete', gff3='on', out_fn='aug.gff',
 def parse_gff3(list_of_lines):
     """Parse a gff3 file for predicted genes
 
-    :param iterator list_of_lines: Input file to read, e.g. an opened gff3 file
+    :param iterator list_of_lines: Input file to read, e.g. an opened gff file
     :return: generator of predicted genes, as (id, (start, end), strand)
     :rtype generator of (str, (int, int), str)
     """
@@ -95,7 +95,7 @@ def parse_gff3(list_of_lines):
     index = None
     strand = ""
     seq_id = ""
-    pattern = re.compile(r'^(\S+)\s+\S+\s+gene\s+(\d+)\s+(\d+)\s+\S+\s+([+-])')
+    patt = re.compile(r'^(\S+)\s+\S+\s+gene\s+(\d+)\s+(\d+)\s+\S+\s+([+-])')
     for line in list_of_lines:
         if not line.strip():
             continue
@@ -108,7 +108,7 @@ def parse_gff3(list_of_lines):
                 if curr:
                     yield curr, index, strand, seq_id
             continue
-        result = pattern.search(line)
+        result = patt.search(line)
         if result:
             index = tuple(map(int, [result.group(i) for i in [2, 3]]))
             strand = result.group(4)
@@ -124,7 +124,7 @@ def calc_gc_fraction(seq):
 
 
 def find_stop_codon(seq, indices, strand):
-    """Find the stop codon within a sequence based on the index in the sequence
+    """Find the stop codon in a sequence based on the index in the sequence
 
     :param str seq: (DNA) sequence where the protein coding sequence is in
     :param tuple/list indices: Pair of indices where the first element is
@@ -141,23 +141,32 @@ def find_stop_codon(seq, indices, strand):
                         " be list or tuple.")
     complement = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}
     if strand == '-':
-        return list(reversed([complement[base] for base in
-                              seq[indices[0]:indices[0]+3]]))
+        return "".join(reversed([complement[base] for base in
+                                 seq[indices[0]:indices[0]+3]]))
     elif strand == '+':
-        return seq[indices[1]-3:indices[1]]
+        return "".join(seq[indices[1]-3:indices[1]])
 
 
 def calc_gene_and_stop_stats(assembly, predicted):
+    """Calculate GC content and stop cod. per gene and GC-content per stopcod.
 
+    :param dict assembly: dictionary containing the assembled genome, as
+    {_fragment_id (str): sequence (str)}
+    :param predicted: dictionary containing the predicted genes, as
+    {gene_id (str): {seq_id (str), (index (int, int)), strand (str)}
+    :return: two dictionaries, the first dict with GC content and stop codon
+    per gene id; the second with GC content per stop codon.
+    :rtype tuple of dicts; ({str: (float, str)}, {str: float})
+    """
     gc_stop = {}
     stop_average = {}
     for _id, _val in predicted.items():
-        stop = find_stop_codon(assembly[_val['seq_id']], _val['index'],
-                               _val['strand'])
         sequence = assembly[_val['seq_id']][0]\
             [_val['index'][0]:_val['index'][1]]
-        print(sequence)
-        gc_stop[_id] = (calc_gc_fraction(sequence), stop)
+        stop = find_stop_codon(assembly[_val['seq_id']][0], _val['index'],
+                               _val['strand'])
+        # print(len(sequence), _val['index'], _val['strand'])
+        gc_stop[_id] = (calc_gc_fraction(sequence) * 100, stop)
         if stop in stop_average:
             stop_average[stop].append(sequence)
         else:
@@ -194,12 +203,18 @@ if __name__ == '__main__':
                               }
             PREDICTED_ORDER.append(_id)
     # # Testing:
-    for seq_id in ASSEMBLY:
-        print(seq_id)
-    for entry in PREDICTED.items():
-        print(entry)
+    # for seq_id in ASSEMBLY:
+    #     print(seq_id)
+    # for entry in PREDICTED.items():
+    #     print(entry)
     # print(PREDICTED_ORDER)
-    GENE_STATS, STOP_STATS = calc_gene_and_stop_stats(ASSEMBLY, PREDICTED)
-    for gene in PREDICTED_ORDER:
-        print("{:s}\t{:.3f}\t{:s}".format(*GENE_STATS[gene]))
 
+    # Calculate predicted gene and stop codon statistics:
+    GENE_STATS, STOP_STATS = calc_gene_and_stop_stats(ASSEMBLY, PREDICTED)
+
+    # Print the output:
+    for gene in PREDICTED_ORDER:
+        print("{:s}\t{:.3f}\t{:s}".format(gene, *GENE_STATS[gene]))
+    print("---")
+    for _k, _v in STOP_STATS.items():
+        print("{:s}\t{:.3f}".format(_k, _v))
