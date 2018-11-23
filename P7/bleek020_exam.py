@@ -125,16 +125,20 @@ if __name__ == '__main__':
     ARGS = parse_arguments()
     # print(type(ARGS), ARGS)
 
+    # Run augustus based on command line parameters.
     run_augustus(ARGS['assembly'], out_fn=ARGS['augustus_out'])
 
+    # Open and read assembly FASTA and Augustus output file:
     with open(ARGS['assembly']) as inp_f:
         ASSEMBLY = {_id: (_seq, len(_seq)) for _id, _seq in
                     parse_fasta(inp_f)}
-
     with open(ARGS['augustus_out']) as gff_inp:
         PREDICTED = {_id: (_index, _strand) for _id, _index, _strand in
                      parse_gff3(gff_inp)}
-
-    for entry in PREDICTED.items():
-        print(entry)
+        PREDICTED_ORDER = [_id for _id, _index, _strand in
+                           parse_gff3(gff_inp)]
+    # # Testing:
+    # for entry in PREDICTED.items():
+    #     print(entry)
+    print(PREDICTED_ORDER)
 
