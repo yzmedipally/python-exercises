@@ -133,12 +133,12 @@ if __name__ == '__main__':
         ASSEMBLY = {_id: (_seq, len(_seq)) for _id, _seq in
                     parse_fasta(inp_f)}
     with open(ARGS['augustus_out']) as gff_inp:
-        PREDICTED = {_id: (_index, _strand) for _id, _index, _strand in
-                     parse_gff3(gff_inp)}
-        PREDICTED_ORDER = [_id for _id, _index, _strand in
-                           parse_gff3(gff_inp)]
+        PREDICTED, PREDICTED_ORDER = {}, []
+        for _id, _index, _strand in parse_gff3(gff_inp):
+            PREDICTED[_id] = {'index': _index, 'strand': _strand}
+            PREDICTED_ORDER.append(_id)
     # # Testing:
-    # for entry in PREDICTED.items():
-    #     print(entry)
+    for entry in PREDICTED.items():
+        print(entry)
     print(PREDICTED_ORDER)
 
