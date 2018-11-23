@@ -94,7 +94,8 @@ def parse_gff3(list_of_lines):
     curr = None
     index = None
     strand = ""
-    pattern = re.compile(r'^\S+\s+\S+\s+gene\s+(\d+)\s+(\d+)\s+\S+\s+([+-])')
+    seq_id = ""
+    pattern = re.compile(r'^(\S+)\s+\S+\s+gene\s+(\d+)\s+(\d+)\s+\S+\s+([+-])')
     for line in list_of_lines:
         if not line.strip():
             continue
@@ -105,12 +106,13 @@ def parse_gff3(list_of_lines):
                 curr = start.group(1)
             if end:
                 if curr:
-                    yield curr, index, strand
+                    yield curr, index, strand, seq_id
             continue
         result = pattern.search(line)
         if result:
-            index = tuple(map(int, [result.group(i) for i in [1, 2]]))
-            strand = result.group(3)
+            index = tuple(map(int, [result.group(i) for i in [2, 3]]))
+            strand = result.group(4)
+            seq_id = result.group(1)
 
 
 def calc_gc_fraction(seq):
@@ -141,12 +143,13 @@ if __name__ == '__main__':
                     parse_fasta(inp_f)}
     with open(ARGS['augustus_out']) as gff_inp:
         PREDICTED, PREDICTED_ORDER = {}, []
-        for _id, _index, _strand in parse_gff3(gff_inp):
+        for _id, _index, _strand, _seq_id in parse_gff3(gff_inp):
             PREDICTED[_id] = {'index': (_index[0] - 1, _index[1]),
-                              'strand': _strand}
+                              'strand': _strand,
+                              'seq_id': _seq_id,
+                              }
             PREDICTED_ORDER.append(_id)
     # # Testing:
     for entry in PREDICTED.items():
         print(entry)
     print(PREDICTED_ORDER)
-
