@@ -139,7 +139,7 @@ if __name__ == '__main__':
 
     # Open and read assembly FASTA and Augustus output file:
     with open(ARGS['assembly']) as inp_f:
-        ASSEMBLY = {_id: (_seq, len(_seq)) for _id, _seq in
+        ASSEMBLY = {_id.split(" ")[0]: (_seq, len(_seq)) for _id, _seq in
                     parse_fasta(inp_f)}
     with open(ARGS['augustus_out']) as gff_inp:
         PREDICTED, PREDICTED_ORDER = {}, []
@@ -150,6 +150,8 @@ if __name__ == '__main__':
                               }
             PREDICTED_ORDER.append(_id)
     # # Testing:
+    for seq_id in ASSEMBLY:
+        print(seq_id)
     for entry in PREDICTED.items():
         print(entry)
-    print(PREDICTED_ORDER)
+    # print(PREDICTED_ORDER)
