@@ -10,7 +10,7 @@ import subprocess as sbp
 import re
 from sys import argv
 from os.path import exists
-
+from operator import add
 
 def parse_arguments():
     """Create an argument parser and parse arguments from argv
@@ -113,6 +113,13 @@ def parse_gff3(list_of_lines):
             strand = result.group(3)
 
 
+def calc_gc_fraction(seq):
+    """Calculates GC content as a fraction for any given sequence
+
+    :param str seq: Sequence to calculate GC fraction for
+    :returns float: GC fraction """
+    return sum(1 if base in 'GC' else 0 for base in seq.upper()) / len(seq)
+
 
 if __name__ == '__main__':
     # # In the case that argparse is not allowed:
@@ -135,7 +142,8 @@ if __name__ == '__main__':
     with open(ARGS['augustus_out']) as gff_inp:
         PREDICTED, PREDICTED_ORDER = {}, []
         for _id, _index, _strand in parse_gff3(gff_inp):
-            PREDICTED[_id] = {'index': _index, 'strand': _strand}
+            PREDICTED[_id] = {'index': (_index[0] - 1, _index[1]),
+                              'strand': _strand}
             PREDICTED_ORDER.append(_id)
     # # Testing:
     for entry in PREDICTED.items():
