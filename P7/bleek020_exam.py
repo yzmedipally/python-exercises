@@ -134,4 +134,7 @@ if __name__ == '__main__':
     with open(ARGS['augustus_out']) as gff_inp:
         PREDICTED = {_id: (_index, _strand) for _id, _index, _strand in
                      parse_gff3(gff_inp)}
-    print(next(iter(PREDICTED.items())))
+
+    for entry in PREDICTED.items():
+        print(entry)
+
