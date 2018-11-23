@@ -123,6 +123,48 @@ def calc_gc_fraction(seq):
     return sum(1 if base in 'GC' else 0 for base in seq.upper()) / len(seq)
 
 
+def find_stop_codon(seq, indices, strand):
+    """Find the stop codon within a sequence based on the index in the sequence
+
+    :param str seq: (DNA) sequence where the protein coding sequence is in
+    :param tuple/list indices: Pair of indices where the first element is
+    smaller than the second
+    :param strand:
+    :return:
+    """
+    if strand not in '+-':
+        raise ValueError("Strand information is not in the correct format")
+    if indices[0] >= indices[1] or len(indices) != 2:
+        raise ValueError("Index information is not in the correct format")
+    if not any(isinstance(indices, type_) for type_ in [list, tuple]):
+        raise TypeError("Index information is not in the correct type. Should"
+                        " be list or tuple.")
+    complement = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}
+    if strand == '-':
+        return list(reversed([complement[base] for base in
+                              seq[indices[0]:indices[0]+3]]))
+    elif strand == '+':
+        return seq[indices[1]-3:indices[1]]
+
+
+def calc_gene_and_stop_stats(assembly, predicted):
+
+    gc_stop = {}
+    stop_average = {}
+    for _id, _val in predicted.items():
+        stop = find_stop_codon(assembly[_val['seq_id']], _val['index'],
+                               _val['strand'])
+        sequence = assembly[_val['seq_id']][_val['index'][0]:_val['index'][1]]
+        gc_stop[_id] = (calc_gc_fraction(sequence), stop)
+        if stop in stop_average:
+            stop_average[stop].append(sequence)
+        else:
+            stop_average[stop] = [sequence, ]
+    stop_average = {_k: calc_gc_fraction("".join(_v))
+                    for _k, _v in stop_average.items()}
+    return gc_stop, stop_average
+
+
 if __name__ == '__main__':
     # # In the case that argparse is not allowed:
     # if not len(argv) == 3:
@@ -155,3 +197,7 @@ if __name__ == '__main__':
     for entry in PREDICTED.items():
         print(entry)
     # print(PREDICTED_ORDER)
+    GENE_STATS, STOP_STATS = calc_gene_and_stop_stats(ASSEMBLY, PREDICTED)
+    for gene in PREDICTED_ORDER:
+        print("{:s}\t{:.3f}\t{:s}".format(*GENE_STATS[gene]))
+
