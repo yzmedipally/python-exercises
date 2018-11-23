@@ -66,7 +66,7 @@ def run_augustus(in_fn, genemodel='complete', gff3='on', out_fn='aug.gff',
     if exists(out_fn):
         print("## Output file already exists; augustus was not run.")
         return
-    cmd = "augustus --genemodel {} --gff3 {} --outfile {} --species {} {}"\
+    cmd = "augustus --genemodel={} --gff3={} --outfile={} --species={} {}"\
         .format(genemodel, gff3, out_fn, species, in_fn)
 
     print("## Running augustus, command used:\n## {}".format(cmd))
