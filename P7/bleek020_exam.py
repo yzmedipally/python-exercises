@@ -10,7 +10,7 @@ import subprocess as sbp
 import re
 from sys import argv
 from os.path import exists
-from operator import add
+
 
 def parse_arguments():
     """Create an argument parser and parse arguments from argv
@@ -199,8 +199,7 @@ if __name__ == '__main__':
         for _id, _index, _strand, _seq_id in parse_gff3(gff_inp):
             PREDICTED[_id] = {'index': (_index[0] - 1, _index[1]),
                               'strand': _strand,
-                              'seq_id': _seq_id,
-                              }
+                              'seq_id': _seq_id, }
             PREDICTED_ORDER.append(_id)
     # # Testing:
     # for seq_id in ASSEMBLY:
