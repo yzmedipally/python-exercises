@@ -154,8 +154,7 @@ def calc_gene_and_stop_stats(assembly, predicted):
     for _id, _val in predicted.items():
         stop = find_stop_codon(assembly[_val['seq_id']], _val['index'],
                                _val['strand'])
-        #print(assembly[_val['seq_id']])
-        sequence = assembly[_val['seq_id']][0]
+        sequence = assembly[_val['seq_id']][0]\
             [_val['index'][0]:_val['index'][1]]
         print(sequence)
         gc_stop[_id] = (calc_gc_fraction(sequence), stop)
