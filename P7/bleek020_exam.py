@@ -7,6 +7,7 @@ Author: Hidde Bleeker (931202071020)
 # Imports
 import argparse
 import subprocess as sbp
+import re
 from sys import argv
 from os.path import exists
 
@@ -24,6 +25,11 @@ def parse_arguments():
                         else parser.error("Wrong input file extension."),
                         help="Input genome assembly FASTA file, with .fasta or"
                              " .fa file extension.")
+    parser.add_argument('-o', '--augustus_out', default='aug.gff',
+                        type=lambda inp: inp if inp.lower().endswith('.gff')
+                        else parser.error("Wrong input file extension."),
+                        help="Augustus output filename, with .gff file "
+                             "extension.")
     if len(argv) <= 1:
         parser.print_help()
         exit(1)
@@ -78,6 +84,36 @@ def run_augustus(in_fn, genemodel='complete', gff3='on', out_fn='aug.gff',
     # implicit return
 
 
+def parse_gff3(list_of_lines):
+    """Parse a gff3 file for predicted genes
+
+    :param iterator list_of_lines: Input file to read, e.g. an opened gff3 file
+    :return: generator of predicted genes, as (id, (start, end), strand)
+    :rtype generator of (str, (int, int), str)
+    """
+    curr = None
+    index = None
+    strand = ""
+    pattern = re.compile(r'^\S+\s+\S+\s+gene\s+(\d+)\s+(\d+)\s+\S+\s+([+-])')
+    for line in list_of_lines:
+        if not line.strip():
+            continue
+        if line.startswith('#'):
+            start = re.search(r'^# start gene (\S+)', line)
+            end = re.search(r'^# end gene (\S+)', line)
+            if start:
+                curr = start.group(1)
+            if end:
+                if curr:
+                    yield curr, index, strand
+            continue
+        result = pattern.search(line)
+        if result:
+            index = tuple(map(int, [result.group(i) for i in [1, 2]]))
+            strand = result.group(3)
+
+
+
 if __name__ == '__main__':
     # # In the case that argparse is not allowed:
     # if not len(argv) == 3:
@@ -89,8 +125,13 @@ if __name__ == '__main__':
     ARGS = parse_arguments()
     # print(type(ARGS), ARGS)
 
-    run_augustus(ARGS['assembly'])
+    run_augustus(ARGS['assembly'], out_fn=ARGS['augustus_out'])
 
     with open(ARGS['assembly']) as inp_f:
         ASSEMBLY = {_id: (_seq, len(_seq)) for _id, _seq in
                     parse_fasta(inp_f)}
+
+    with open(ARGS['augustus_out']) as gff_inp:
+        PREDICTED = {_id: (_index, _strand) for _id, _index, _strand in
+                     parse_gff3(gff_inp)}
+    print(next(iter(PREDICTED.items())))
