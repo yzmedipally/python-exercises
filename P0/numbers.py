@@ -2,6 +2,8 @@
 """
 Read numbers from command line and print sum of the numbers
 
+Edit for git purposes
+
 Author: Hidde Bleeker
 931202071020
 """
