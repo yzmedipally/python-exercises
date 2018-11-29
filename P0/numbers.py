@@ -4,6 +4,8 @@ Read numbers from command line and print sum of the numbers
 
 Edit for git purposes
 
+Edit again
+
 Author: Hidde Bleeker
 931202071020
 """
